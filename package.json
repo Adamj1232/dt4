@@ -1,7 +1,7 @@
 {
   "name": "dt4",
   "version": "0.1.0",
-  "homepage": "https://adamj1232.github.io/dt4",
+  "homepage": "https://www.adamjcarpenter.com",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",

@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import logo from "./logo.svg";
+import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
-import { ReactComponent as King } from "./images/dt4_king_noWhiteSpace2tone.svg";
+import { ReactComponent as King } from "./images/dt4_king_noWhiteSpace-w.svg";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
 import { ReactComponent as Twit } from "./images/twitterwhite.svg";
@@ -14,12 +14,27 @@ import { ReactComponent as Email } from "./images/mail.svg";
 import particlesOptions from "./particle2.json";
 
 function App() {
-  const particlesInit = useCallback((main) => {
-    loadFull(main);
+  const particlesInit = useCallback(async (main) => {
+    await loadFull(main);
+    loadPolygonMaskPlugin(main)
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
   }, []);
 
   return (
     <div>
+      <div className="parallax-scrolling">
+        <Particles
+          id="parts"
+          options={particlesOptions}
+          init={particlesInit}
+          loaded={particlesLoaded}
+          canvasClassName="particle-canvas"
+        />
+      </div>
+
       <link
         href="https://fonts.googleapis.com/css?family=Raleway:200,400"
         rel="stylesheet"
@@ -28,7 +43,7 @@ function App() {
         href="https://fonts.googleapis.com/css?family=Titillium+Web:200"
         rel="stylesheet"
       />
-      <section className="parallax-scrolling" id="header">
+      <section id="header">
         <div id="main-menu-social">
           <a
             className="main-social-links"
@@ -63,11 +78,12 @@ function App() {
             contact
           </a>
         </div>
-        <div className="main-title-container">
-          <Particles options={particlesOptions} init={particlesInit} />
+      </section>
+      <div className="main-title-container">
+        <div className="logo-container">
           <King />
         </div>
-      </section>
+      </div>
 
       <section className="parallax-scrolling" id="bio">
         <h2 id="bio-title">Bio</h2>
@@ -118,8 +134,7 @@ function App() {
           <iframe
             width="100%"
             height="350"
-            scrolling="no"
-            frameborder="no"
+            title="Audio player for DT4 Songs"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1548224161&color=%23ae2727&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
           ></iframe>

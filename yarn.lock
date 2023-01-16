@@ -8522,6 +8522,13 @@ tsparticles-plugin-emitters@^2.7.1:
   dependencies:
     tsparticles-engine "^2.7.1"
 
+tsparticles-plugin-polygon-mask@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/tsparticles-plugin-polygon-mask/-/tsparticles-plugin-polygon-mask-2.7.1.tgz#9c88481765ef509ae3f848174f974b14c179630b"
+  integrity sha512-oNhgLUCdDTp/2Z5GH1J/4bhQz0hASif+Ra2lwunfJ78G8CbSpNS/vqq5R2zXsZC2dlhsgXEak9eSv7nNu2MFAg==
+  dependencies:
+    tsparticles-engine "^2.7.1"
+
 tsparticles-shape-circle@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/tsparticles-shape-circle/-/tsparticles-shape-circle-2.7.1.tgz#44502bb90223684c9101449a44ad4ed70f88824b"

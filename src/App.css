@@ -38,7 +38,7 @@
 
 #tsparticles {
   position: fixed;
-  height: 100%;
+  height: 70%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -52,8 +52,8 @@
 
 .logo-container {
   position: absolute;
-  top: 0;
-  height: 100%;
+  bottom: 0;
+  height: 84%;
 }
 
 html,
@@ -108,13 +108,6 @@ a {
   width: 100vw;
   position: absolute;
   bottom: 0;
-}
-
-.logo {
-  width: 300px;
-  position: absolute;
-  top: 50px;
-  left: calc(50vw - 150px);
 }
 
 .logoG {
@@ -362,7 +355,17 @@ iframe.music-videos {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 500px) {
+  .king-logo {
+    width: 120vw;
+    margin: 184px 0;
+  }
+  .logo-container {
+    right: 0;
+  }
+}
 @media screen and (min-width: 500px) {
+
   #main-menu {
     height: 50px;
     display: flex;

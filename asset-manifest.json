@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.90d5d5cf.css",
-    "main.js": "/static/js/main.8ac6c574.js",
+    "main.css": "/static/css/main.69508d76.css",
+    "main.js": "/static/js/main.ab4f2fe6.js",
     "static/media/DT4_Ullrs_Dec_2021.png": "/static/media/DT4_Ullrs_Dec_2021.436b1c4beeedc6e94a24.png",
     "static/media/dt4_king_noWhiteSpace-w.svg": "/static/media/dt4_king_noWhiteSpace-w.a90fa6d57276453e4c7daea068ce131d.svg",
+    "static/media/dt4_king_noWhiteSpace-w.png": "/static/media/dt4_king_noWhiteSpace-w.b8d47a2335d49eed0126.png",
     "static/media/instagram.svg": "/static/media/instagram.134ef84c5584482dad55da3e531b5146.svg",
     "static/media/instagramwhite.svg": "/static/media/instagramwhite.4f3934c0a6b34412b16a6ab4901e9bf2.svg",
     "static/media/twitterwhite.svg": "/static/media/twitterwhite.0f61c06b1bdbee5c716c672683b59d88.svg",
@@ -11,11 +12,11 @@
     "static/media/facebook.svg": "/static/media/facebook.245d4678d185c86288fb3d5d6acb8a36.svg",
     "static/media/facebookwhite.svg": "/static/media/facebookwhite.4bf503b3da21cf16aec190a71094adf6.svg",
     "index.html": "/index.html",
-    "main.90d5d5cf.css.map": "/static/css/main.90d5d5cf.css.map",
-    "main.8ac6c574.js.map": "/static/js/main.8ac6c574.js.map"
+    "main.69508d76.css.map": "/static/css/main.69508d76.css.map",
+    "main.ab4f2fe6.js.map": "/static/js/main.ab4f2fe6.js.map"
   },
   "entrypoints": [
-    "static/css/main.90d5d5cf.css",
-    "static/js/main.8ac6c574.js"
+    "static/css/main.69508d76.css",
+    "static/js/main.ab4f2fe6.js"
   ]
 }

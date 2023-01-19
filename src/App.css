@@ -53,7 +53,7 @@
 .logo-container {
   position: absolute;
   bottom: 0;
-  height: 84%;
+  height: 90%;
 }
 
 html,
@@ -355,10 +355,14 @@ iframe.music-videos {
   align-items: center;
   justify-content: center;
 }
+.king-logo {
+  height: 100%;
+}
 @media screen and (max-width: 500px) {
   .king-logo {
     width: 120vw;
     margin: 184px 0;
+    height: unset;
   }
   .logo-container {
     right: 0;

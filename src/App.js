@@ -714,7 +714,7 @@ function App() {
           sound that is uniquely their own. The band formed in 2022, quickly
           making a name for themselves in the Denver and Colorado Mountain music
           scene with their high-energy performances and catchy original songs.
-          Their debut EP "Shots in the Dark" was released in 2018, showcasing
+          Their debut EP "Burn It In" is slated to be released later this year and showcases
           their raw and unfiltered sound that has become their trademark.
           <br />
           The band's live shows are not to be missed, as they are known for

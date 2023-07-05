@@ -5,6 +5,7 @@ import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
 import { ReactComponent as King } from "./images/dt4_king_noWhiteSpace-w.svg";
 import KingPng from "./images/dt4_king_noWhiteSpace-w.png";
+import CardPng from "./images/DT4_logo_initials.png";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
 import { ReactComponent as Twit } from "./images/twitterwhite.svg";
@@ -12,7 +13,7 @@ import { ReactComponent as Ig } from "./images/instagramwhite.svg";
 import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
 
-import particlesOptions from "./particle2.json";
+import particlesOptions from "./particle_tunnel.json";
 
 function App() {
   const particlesInit = useCallback(async (main) => {
@@ -24,9 +25,6 @@ function App() {
     await console.log(container);
   }, []);
 
-  const shouldUpdate = (t) => {
-    console.log('shouldUpdate', t)
-  }
   const width = window.innerWidth;
 
   // Use width to set scale and particle density
@@ -35,13 +33,11 @@ function App() {
   // }else{
   //     num_nb = Math.round(Math.sqrt(width * 3));
   // }
-
-  return (
-    <div>
-      <div className="parallax-scrolling">
+  const renderParticles = () => {
+    if (width > 800) {
+      return (
         <Particles
           id="parts"
-          resize={(e) => shouldUpdate(e)}
           options={{
             autoPlay: true,
             background: {
@@ -582,7 +578,7 @@ function App() {
                 options: {
                   particles: {
                     number: {
-                      value: 300
+                      value: 300,
                     },
                   },
                 },
@@ -609,19 +605,19 @@ function App() {
                 radius: 8,
               },
               position: {
-                y: width < 1300 ? 20 : 25,
+                y: width < 1300 ? 25 : 36,
                 x: 50,
-                mode: 'percent'
+                mode: "percent",
               },
               inline: {
                 arrangement: "equidistant",
               },
 
-              scale: width < 950 ? 1.2 : width < 1300 ? 3 : 4,
+              scale:width < 1300 ? 2.6 : 4.2,
               type: "inline",
               data: `<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='296' height='117'>
-              <path d='m9.9 94.5h11.1v-68.1h-11.1v-20.7h47.5c26.4 0 45.4 16 45.4 54.7 0 38.6-17.5 56.4-44.1 56.4h-48.8zm49.2 0c15.8 0 19.9-10.8 19.9-34.1 0-23-5.3-34-21.1-34h-15v68.1zm52.2-88.8h93.4v43.2h-14.6v-22.5h-21.2v68.3h14v22.3h-49.5v-22.3h13.7v-68.3h-21.2v22.5h-14.6zm101.9 88.9h11v-68.3h-11v-20.6h82.8v43.1h-14.6v-22.5h-35.2v23.2h24.1v20.7h-24.1v24.4h11.4v22.3h-44.4z'/>
-          </svg>`,
+          <path d='m9.9 94.5h11.1v-68.1h-11.1v-20.7h47.5c26.4 0 45.4 16 45.4 54.7 0 38.6-17.5 56.4-44.1 56.4h-48.8zm49.2 0c15.8 0 19.9-10.8 19.9-34.1 0-23-5.3-34-21.1-34h-15v68.1zm52.2-88.8h93.4v43.2h-14.6v-22.5h-21.2v68.3h14v22.3h-49.5v-22.3h13.7v-68.3h-21.2v22.5h-14.6zm101.9 88.9h11v-68.3h-11v-20.6h82.8v43.1h-14.6v-22.5h-35.2v23.2h24.1v20.7h-24.1v24.4h11.4v22.3h-44.4z'/>
+      </svg>`,
             },
             fullScreen: {
               enable: false,
@@ -632,7 +628,31 @@ function App() {
           canvasClassName="particle-canvas"
           width="100vw"
         />
-      </div>
+      );
+    } else {
+      return (
+        <Particles
+          id="parts"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          canvasClassName="particle-canvas"
+          options={particlesOptions}
+          width="100vw"
+        />
+      );
+    }
+  };
+
+  const renderMainLogo = () => {
+    if (width > 800) {
+      return <img alt="king png" className="king-logo" src={KingPng} />;
+    } else {
+      return <img alt="king png" className="card-logo" src={CardPng} />;
+    }
+  };
+  return (
+    <div>
+      <div className="parallax-scrolling">{renderParticles()}</div>
 
       <link
         href="https://fonts.googleapis.com/css?family=Raleway:200,400"
@@ -681,8 +701,7 @@ function App() {
       <div className="main-title-container">
         <div className="logo-container">
           {/* <King /> */}
-          <img alt="king png" className="king-logo" src={KingPng}/>
-
+          {renderMainLogo()}
         </div>
       </div>
 
@@ -719,13 +738,20 @@ function App() {
       </section>
 
       <hr></hr>
-      {/* <section className="parallax-scrolling" id="tour">
+      <section className="parallax-scrolling" id="tour">
         <h2 id="tour-title">Shows</h2>
         <div className="widget_iframe widget-container">
-          <iframe title="tour-dates" className="widget_iframe tour-widget" src="https://www.reverbnation.com/widget_code/html_widget/artist_515710?widget_id=52&pwc[design]=default&pwc[background_color]=%23333333&pwc[layout]=detailed&pwc[show_map]=0%2C1&pwc[size]=fit" width="100%" height="100%" frameborder="0" scrolling="no">
-          </iframe>
+          <iframe
+            title="tour-dates"
+            className="widget_iframe tour-widget"
+            src="https://www.reverbnation.com/widget_code/html_widget/artist_8523411?widget_id=52&pwc[design]=default&pwc[background_color]=%23333333&pwc[layout]=detailed&pwc[show_map]=0%2C1&pwc[size]=fit"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
         </div>
-      </section> */}
+      </section>
 
       <section className="parallax-scrolling" id="music">
         <h2 id="music-title">Music</h2>
@@ -752,10 +778,66 @@ function App() {
       <section className="parallax-scrolling" id="videos">
         <h2 id="music-title">Videos</h2>
         <div className="video-container">
-          {/* <iframe title="Lost My Head" className="music-videos" width="475" height="315" src="https://www.youtube.com/embed/Uirvehr3bG8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>        
-          <iframe title="Poison" className="music-videos" width="475" height="315" src="https://www.youtube.com/embed/SGxHRHNoBCM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <iframe title="Old Car" className="music-videos" width="475" height="315" src="https://www.youtube.com/embed/N-rG8Dzwid4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <iframe title="Light Out There" className="music-videos" width="475" height="315" src="https://www.youtube.com/embed/OvMS95ZlFfw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://youtube.com/embed/fCEgYGMSTD8?feature=share"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />{" "}
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://youtube.com/embed/Oi03rAOF3Cs?feature=share"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />{" "}
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://www.youtube.com/embed/tpSz-eiYtYQ"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://www.youtube.com/embed/tpSz-eiYtYQ"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://www.youtube.com/embed/R5zlBwYO1HQ"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://www.youtube.com/embed/VgvotBMszUc"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
         <p className="music-text"></p>
       </section>

@@ -359,8 +359,8 @@ iframe.music-videos {
   height: 100%;
 }
 @media screen and (max-width: 500px) {
-  .king-logo {
-    width: 120vw;
+  .card-logo {
+    width: 100vw;
     margin: 184px 0;
     height: unset;
   }

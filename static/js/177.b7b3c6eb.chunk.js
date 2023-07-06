@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdt4=self.webpackChunkdt4||[]).push([[177],{177:function(t,c,s){t.exports=s.p+"static/media/DT4_logo_initials.1c8b0c26db7096c633b6.png"}}]);

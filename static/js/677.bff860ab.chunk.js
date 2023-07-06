@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdt4=self.webpackChunkdt4||[]).push([[677],{677:function(e,t,d){e.exports=d.p+"static/media/dt4_king_noWhiteSpace-w.6dd9a4ad8d9133ad4e82.png"}}]);

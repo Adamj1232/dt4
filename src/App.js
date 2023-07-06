@@ -633,9 +633,9 @@ function App() {
 
   const renderMainLogo = () => {
     if (width > 800) {
-      return <img alt="king png" className="king-logo" src={process.env.PUBLIC_URL + '/images/dt4_king_noWhiteSpace-w.png'} />;
+      return <img alt="king png" className="king-logo" src={KingPng} />;
     } else {
-      return <img alt="king png" className="card-logo" src={process.env.PUBLIC_URL + '/images/DT4_logo_initials.png'} />;
+      return <img alt="king png" className="card-logo" src={CardPng} />;
     }
   };
   return (
@@ -688,6 +688,7 @@ function App() {
       </section>
       <div className="main-title-container">
         <div className="logo-container">
+          {/* <King /> */}
           {renderMainLogo()}
         </div>
       </div>

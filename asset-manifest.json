@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.11ccde73.css",
-    "main.js": "/static/js/main.129b7903.js",
+    "main.js": "/static/js/main.cd1854a7.js",
     "static/media/DT4_Ullrs_Dec_2021.png": "/static/media/DT4_Ullrs_Dec_2021.b3643fc58f5f7f4dc04d.png",
     "static/media/DT4_logo_initials.png": "/static/media/DT4_logo_initials.1c8b0c26db7096c633b6.png",
     "static/media/dt4_king_noWhiteSpace-w.png": "/static/media/dt4_king_noWhiteSpace-w.6dd9a4ad8d9133ad4e82.png",
@@ -13,10 +13,10 @@
     "static/media/facebookwhite.svg": "/static/media/facebookwhite.4bf503b3da21cf16aec190a71094adf6.svg",
     "index.html": "/index.html",
     "main.11ccde73.css.map": "/static/css/main.11ccde73.css.map",
-    "main.129b7903.js.map": "/static/js/main.129b7903.js.map"
+    "main.cd1854a7.js.map": "/static/js/main.cd1854a7.js.map"
   },
   "entrypoints": [
     "static/css/main.11ccde73.css",
-    "static/js/main.129b7903.js"
+    "static/js/main.cd1854a7.js"
   ]
 }

@@ -366,6 +366,7 @@ iframe.music-videos {
   }
   .logo-container {
     right: 0;
+    height: unset;
   }
 }
 @media screen and (min-width: 500px) {

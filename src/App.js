@@ -3,7 +3,6 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
-import { ReactComponent as King } from "./images/dt4_king_noWhiteSpace-w.svg";
 import KingPng from "./images/dt4_king_noWhiteSpace-w.png";
 import CardPng from "./images/DT4_logo_initials.png";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
@@ -15,24 +14,18 @@ import { ReactComponent as Email } from "./images/mail.svg";
 
 import particlesOptions from "./particle_tunnel.json";
 
+const width = window.innerWidth;
 function App() {
   const particlesInit = useCallback(async (main) => {
     await loadFull(main);
-    loadPolygonMaskPlugin(main);
+    width > 800 && loadPolygonMaskPlugin(main);
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
     await console.log(container);
   }, []);
 
-  const width = window.innerWidth;
 
-  // Use width to set scale and particle density
-  //   if (width>768){
-  //     num_nb = Math.round(Math.sqrt(width * 15));
-  // }else{
-  //     num_nb = Math.round(Math.sqrt(width * 3));
-  // }
   const renderParticles = () => {
     if (width > 800) {
       return (

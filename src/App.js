@@ -25,7 +25,6 @@ function App() {
     await console.log(container);
   }, []);
 
-
   const renderParticles = () => {
     if (width > 800) {
       return (
@@ -606,7 +605,7 @@ function App() {
                 arrangement: "equidistant",
               },
 
-              scale:width < 1300 ? 2.6 : 4.2,
+              scale: width < 1300 ? 2.6 : 4.2,
               type: "inline",
               data: `<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='296' height='117'>
           <path d='m9.9 94.5h11.1v-68.1h-11.1v-20.7h47.5c26.4 0 45.4 16 45.4 54.7 0 38.6-17.5 56.4-44.1 56.4h-48.8zm49.2 0c15.8 0 19.9-10.8 19.9-34.1 0-23-5.3-34-21.1-34h-15v68.1zm52.2-88.8h93.4v43.2h-14.6v-22.5h-21.2v68.3h14v22.3h-49.5v-22.3h13.7v-68.3h-21.2v22.5h-14.6zm101.9 88.9h11v-68.3h-11v-20.6h82.8v43.1h-14.6v-22.5h-35.2v23.2h24.1v20.7h-24.1v24.4h11.4v22.3h-44.4z'/>
@@ -656,26 +655,6 @@ function App() {
         rel="stylesheet"
       />
       <section id="header">
-        <div id="main-menu-social">
-          <a
-            className="main-social-links"
-            href="https://www.facebook.com/DealerTakesFour"
-          >
-            <Fb className="menu-social-icon" />
-          </a>
-          {/* <a
-              className="main-social-links"
-              href="https://twitter.com/horseysurprise"
-              >
-              <Twit className="menu-social-icon"/>
-            </a> */}
-          <a
-            className="main-social-links"
-            href="https://www.instagram.com/dealertakes4/"
-          >
-            <Ig className="menu-social-icon" />
-          </a>
-        </div>
         <div id="main-menu">
           <a className="menu-links" id="main-menu-tour" href="#tour">
             tour
@@ -689,6 +668,26 @@ function App() {
           <a className="menu-links" id="main-menu-contact" href="#contact">
             contact
           </a>
+          <div id="main-menu-social">
+            <a
+              className="main-social-links"
+              href="https://www.facebook.com/DealerTakesFour"
+            >
+              <Fb className="menu-social-icon" />
+            </a>
+            {/* <a
+              className="main-social-links"
+              href="https://twitter.com/horseysurprise"
+              >
+              <Twit className="menu-social-icon"/>
+            </a> */}
+            <a
+              className="main-social-links"
+              href="https://www.instagram.com/dealertakes4/"
+            >
+              <Ig className="menu-social-icon" />
+            </a>
+          </div>
         </div>
       </section>
       <div className="main-title-container">
@@ -707,8 +706,9 @@ function App() {
           sound that is uniquely their own. The band formed in 2022, quickly
           making a name for themselves in the Denver and Colorado Mountain music
           scene with their high-energy performances and catchy original songs.
-          Their debut EP "Burn It In" is slated to be released later this year and showcases
-          their raw and unfiltered sound that has become their trademark.
+          Their debut EP "Burn It In" is slated to be released later this year
+          and showcases their raw and unfiltered sound that has become their
+          trademark.
           <br />
           The band's live shows are not to be missed, as they are known for
           their whiskey-fueled performances that leave audiences wanting more.

@@ -442,7 +442,6 @@ iframe.music-videos {
   #main-menu-social {
     display: inline-flex;
     padding: 15px;
-    position: fixed;
     right: 25px;
     z-index: 12;
   }

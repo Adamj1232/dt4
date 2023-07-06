@@ -1,8 +1,10 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
+import KingPng from "./images/dt4_king_noWhiteSpace-w.png";
+import CardPng from "./images/DT4_logo_initials.png";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
 import { ReactComponent as Twit } from "./images/twitterwhite.svg";
@@ -14,24 +16,12 @@ import particlesOptions from "./particle_tunnel.json";
 
 const width = window.innerWidth;
 function App() {
-  const [kingImgSrc, setKingImgSrc] = useState(null);
-  const [cardsImgSrc, setCardsImgSrc] = useState(null);
-
-  useEffect(() => {
-    if (width > 800) {
-      import("./images/dt4_king_noWhiteSpace-w.png").then((image) => {
-        setKingImgSrc(image.default);
-      });
-    } else {
-      import("./images/DT4_logo_initials.png").then((image) => {
-        setCardsImgSrc(image.default);
-      });
-    }
-  }, []);
+  
   const particlesInit = useCallback(async (main) => {
     await loadFull(main);
     width > 800 && loadPolygonMaskPlugin(main);
   }, []);
+
 
   const renderParticles = () => {
     if (width > 800) {
@@ -642,10 +632,10 @@ function App() {
   };
 
   const renderMainLogo = () => {
-    if (width > 800 && kingImgSrc) {
-      return <img alt="king png" className="king-logo" src={kingImgSrc} />;
-    } else if (cardsImgSrc) {
-      return <img alt="king png" className="card-logo" src={cardsImgSrc} />;
+    if (width > 800) {
+      return <img alt="king png" className="king-logo" src={process.env.PUBLIC_URL + '/images/dt4_king_noWhiteSpace-w.png'} />;
+    } else {
+      return <img alt="king png" className="card-logo" src={process.env.PUBLIC_URL + '/images/DT4_logo_initials.png'} />;
     }
   };
   return (
@@ -698,7 +688,6 @@ function App() {
       </section>
       <div className="main-title-container">
         <div className="logo-container">
-          {/* <King /> */}
           {renderMainLogo()}
         </div>
       </div>

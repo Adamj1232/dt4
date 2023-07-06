@@ -21,9 +21,6 @@ function App() {
     width > 800 && loadPolygonMaskPlugin(main);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
 
   const renderParticles = () => {
     if (width > 800) {
@@ -616,7 +613,6 @@ function App() {
             },
           }}
           init={particlesInit}
-          loaded={particlesLoaded}
           canvasClassName="particle-canvas"
           width="100vw"
         />
@@ -626,7 +622,6 @@ function App() {
         <Particles
           id="parts"
           init={particlesInit}
-          loaded={particlesLoaded}
           canvasClassName="particle-canvas"
           options={particlesOptions}
           width="100vw"

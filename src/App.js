@@ -62,7 +62,7 @@ function App() {
               detectsOn: "window",
               events: {
                 onClick: {
-                  enable: true,
+                  enable: false,
                   mode: "push",
                 },
                 onDiv: {
@@ -91,7 +91,7 @@ function App() {
                   duration: 0.4,
                   easing: "ease-out-quad",
                   factor: 1,
-                  maxSpeed: 50,
+                  maxSpeed: 30,
                   speed: 1,
                 },
                 bounce: {
@@ -138,14 +138,14 @@ function App() {
                   duration: 0.4,
                   factor: 100,
                   speed: 1,
-                  maxSpeed: 10,
+                  maxSpeed: 5,
                   easing: "ease-out-quad",
                   divs: {
                     distance: 200,
                     duration: 0.4,
                     factor: 100,
                     speed: 1,
-                    maxSpeed: 50,
+                    maxSpeed: 20,
                     easing: "ease-out-quad",
                     selectors: [],
                   },
@@ -200,7 +200,7 @@ function App() {
               },
               collisions: {
                 absorb: {
-                  speed: 0.2,
+                  speed: 0.1,
                 },
                 bounce: {
                   horizontal: {

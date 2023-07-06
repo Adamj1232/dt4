@@ -642,14 +642,6 @@ function App() {
     <div>
       <div className="parallax-scrolling">{renderParticles()}</div>
 
-      <link
-        href="https://fonts.googleapis.com/css?family=Raleway:200,400"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=Titillium+Web:200"
-        rel="stylesheet"
-      />
       <section id="header">
         <div id="main-menu">
           <a className="menu-links" id="main-menu-tour" href="#tour">

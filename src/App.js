@@ -1,10 +1,10 @@
-import React, { useCallback } from "react";
+import React, { useCallback, Suspense } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
-import KingPng from "./images/dt4_king_noWhiteSpace-w.png";
-import CardPng from "./images/DT4_logo_initials.png";
+import KingPng from "./images/dt4_king_noWhiteSpace-w.webp";
+import CardPng from "./images/DT4_logo_initials.webp";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
 import { ReactComponent as Twit } from "./images/twitterwhite.svg";
@@ -13,6 +13,12 @@ import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
 
 import particlesOptions from "./particle_tunnel.json";
+
+const LazyLoadedMedia = React.lazy(() => import("./views/Media.js"));
+const LazyLoadedShows = React.lazy(() => import("./views/Shows.js"));
+const LazyLoadedMusicPlayer = React.lazy(() =>
+  import("./views/MusicPlayer.js")
+);
 
 const width = window.innerWidth;
 function App() {
@@ -718,117 +724,20 @@ function App() {
 
       <hr></hr>
       <section className="parallax-scrolling" id="tour">
-        <h2 id="tour-title">Shows</h2>
-        <div className="widget_iframe widget-container">
-          <iframe
-            title="tour-dates"
-            className="widget_iframe tour-widget"
-            src="https://www.reverbnation.com/widget_code/html_widget/artist_8523411?widget_id=52&pwc[design]=default&pwc[background_color]=%23333333&pwc[layout]=detailed&pwc[show_map]=0%2C1&pwc[size]=fit"
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            scrolling="no"
-          ></iframe>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyLoadedShows />
+        </Suspense>
       </section>
 
       <section className="parallax-scrolling" id="music">
-        <h2 id="music-title">Music</h2>
-        <div id="music-spacer"></div>
-        <section id="music-container"></section>
-        <div className="iframe-container">
-          <iframe
-            width="100%"
-            height="350"
-            title="Audio player for DT4 Songs"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1548224161&color=%23ae2727&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-          ></iframe>
-        </div>
-        <p className="music-text">
-          <a
-            className="music-links"
-            href="https://soundcloud.com/user-433267577"
-          >
-            For more tunes click here
-          </a>
-        </p>
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyLoadedMusicPlayer />
+        </Suspense>
       </section>
       <section className="parallax-scrolling" id="videos">
-        <h2 id="music-title">Videos</h2>
-        <div className="video-container">
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://youtube.com/embed/fCEgYGMSTD8?feature=share"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://youtube.com/embed/Oi03rAOF3Cs?feature=share"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://www.youtube.com/embed/tpSz-eiYtYQ"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://www.youtube.com/embed/2aRTKgbAo1c?feature=share"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://www.youtube.com/embed/tpSz-eiYtYQ"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://www.youtube.com/embed/R5zlBwYO1HQ"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          <iframe
-            className="music-videos"
-            width="475"
-            height="315"
-            src="https://www.youtube.com/embed/VgvotBMszUc"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
-        <p className="music-text"></p>
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyLoadedMedia />
+        </Suspense>
       </section>
 
       <section className="parallax-scrolling" id="contact">

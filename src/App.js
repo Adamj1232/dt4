@@ -16,12 +16,10 @@ import particlesOptions from "./particle_tunnel.json";
 
 const width = window.innerWidth;
 function App() {
-  
   const particlesInit = useCallback(async (main) => {
     await loadFull(main);
     width > 800 && loadPolygonMaskPlugin(main);
   }, []);
-
 
   const renderParticles = () => {
     if (width > 800) {
@@ -768,7 +766,7 @@ function App() {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          />{" "}
+          />
           <iframe
             className="music-videos"
             width="475"
@@ -778,12 +776,22 @@ function App() {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          />{" "}
+          />
           <iframe
             className="music-videos"
             width="475"
             height="315"
             src="https://www.youtube.com/embed/tpSz-eiYtYQ"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+          <iframe
+            className="music-videos"
+            width="475"
+            height="315"
+            src="https://www.youtube.com/embed/2aRTKgbAo1c?feature=share"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

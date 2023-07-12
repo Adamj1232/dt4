@@ -3,7 +3,6 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
-import KingPng from "./images/dt4_king_noWhiteSpace-w.webp";
 import CardPng from "./images/DT4_logo_initials.webp";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
@@ -13,6 +12,7 @@ import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
 
 import particlesOptions from "./particle_tunnel.json";
+import Spotlight from "./views/Spotlight";
 
 const LazyLoadedMedia = React.lazy(() => import("./views/Media.js"));
 const LazyLoadedShows = React.lazy(() => import("./views/Shows.js"));
@@ -36,7 +36,7 @@ function App() {
             autoPlay: true,
             background: {
               color: {
-                value: "#000000",
+                value: "transparent",
               },
               image: "",
               position: "50% 50%",
@@ -190,7 +190,7 @@ function App() {
                     enable: false,
                     minimumValue: 0.1,
                   },
-                  value: 1,
+                  value: 0.6,
                 },
                 vertical: {
                   random: {
@@ -210,7 +210,7 @@ function App() {
                       enable: false,
                       minimumValue: 0.1,
                     },
-                    value: 1,
+                    value: 0.6,
                   },
                   vertical: {
                     random: {
@@ -504,7 +504,7 @@ function App() {
                 enable: false,
                 speed: {
                   angle: 50,
-                  move: 10,
+                  move: 5,
                 },
               },
               orbit: {
@@ -532,10 +532,10 @@ function App() {
                   value: "#ffffff",
                 },
                 consent: false,
-                distance: 30,
+                distance: 35,
                 enable: false,
                 frequency: 1,
-                opacity: 0.2,
+                opacity: 0.5,
                 shadow: {
                   blur: 5,
                   color: {
@@ -637,15 +637,22 @@ function App() {
 
   const renderMainLogo = () => {
     if (width > 800) {
-      return <img alt="king png" className="king-logo" src={KingPng} />;
+      // return <img alt="king png" className="king-logo" src={KingPng} />;
     } else {
       return <img alt="king png" className="card-logo" src={CardPng} />;
     }
   };
+
+  const renderSpotlight = () => {
+    if (width > 800) {
+      return <Spotlight />;
+    }
+  };
   return (
     <div>
+      <div className="sneaky-background" />
+      {renderSpotlight()}
       <div className="parallax-scrolling">{renderParticles()}</div>
-
       <section id="header">
         <div id="main-menu">
           <a className="menu-links" id="main-menu-tour" href="#tour">

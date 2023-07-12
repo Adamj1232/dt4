@@ -46,6 +46,27 @@
   top: 0;
 }
 
+.sneaky-background {
+  background-image: url("images/dt4_king_noWhiteSpace-w.webp");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+}
+
+.spotlight {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(
+    circle,
+    transparent 160px,
+    rgba(0, 0, 0, 0.85) 200px
+  );
+}
+
 .particle-canvas {
   position: absolute !important;
 }
@@ -110,38 +131,6 @@ a {
   bottom: 0;
 }
 
-.logoG {
-  animation-duration: 3s;
-  animation-name: flyinG;
-}
-
-.logoR {
-  animation-duration: 3s;
-  animation-name: flyinR;
-}
-
-@keyframes flyinG {
-  from {
-    margin-left: 600%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-  }
-}
-
-@keyframes flyinR {
-  from {
-    margin-left: -600%;
-    width: 300%;
-  }
-
-  to {
-    margin-right: 0%;
-  }
-}
-
 .photo {
   position: absolute;
   display: none;
@@ -203,7 +192,7 @@ a {
 #bio {
   background-position: center top;
   margin: 0 auto;
-  padding: 1rem
+  padding: 1rem;
 }
 
 .bio-text {
@@ -355,22 +344,46 @@ iframe.music-videos {
   align-items: center;
   justify-content: center;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .king-logo {
   height: 100%;
+  animation: pulse 8s infinite;
 }
 @media screen and (max-width: 500px) {
+  .sneaky-background {
+    display: none;
+  }
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   .card-logo {
     width: 100vw;
     margin: 184px 0;
     height: unset;
+    animation: zoomIn 6s;
   }
   .logo-container {
     right: 0;
-    height: unset;
+    height: calc(100vh - 50px);
   }
 }
 @media screen and (min-width: 500px) {
-
   #main-menu {
     height: 50px;
     display: flex;
@@ -385,13 +398,6 @@ iframe.music-videos {
     position: absolute;
     top: 50px;
     left: calc(50vw - 150px);
-  }
-
-  .montu-logo {
-    top: 20vh;
-    left: 50%;
-    margin-left: -200px;
-    width: 400px;
   }
 
   .music-text {
@@ -412,22 +418,10 @@ iframe.music-videos {
 }
 
 @media screen and (min-width: 800px) {
-  .montu-logo {
-    margin-left: -300px;
-    width: 600px;
-  }
-
-  /* .logo {
-    top: calc(50vh - 109px);
-    left: calc(50vw - 150px);
-  } */
-
   .photo {
     width: 100vw;
-    /* right: calc(50vw - 45vh); */
     margin: 100px calc(50vw - 45vh) 0 0;
     display: inline;
-    /* position: static; */
   }
 
   .main-title {
@@ -478,7 +472,7 @@ iframe.music-videos {
     display: inline-block;
   }
 
-  social-icon-container {
+  .social-icon-container {
     width: 600px;
   }
 }

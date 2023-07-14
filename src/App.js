@@ -636,9 +636,7 @@ function App() {
   };
 
   const renderMainLogo = () => {
-    if (width > 800) {
-      // return <img alt="king png" className="king-logo" src={KingPng} />;
-    } else {
+    if (width < 800) {
       return <img alt="king png" className="card-logo" src={CardPng} />;
     }
   };

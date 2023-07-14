@@ -366,7 +366,7 @@ iframe.music-videos {
   }
   @keyframes zoomIn {
     0% {
-      transform: scale(0.4);
+      transform: scale(0.2);
     }
     100% {
       transform: scale(1);
@@ -376,7 +376,7 @@ iframe.music-videos {
     width: 100vw;
     margin: 184px 0;
     height: unset;
-    animation: zoomIn 6s;
+    animation: zoomIn 8s;
   }
   .logo-container {
     right: 0;

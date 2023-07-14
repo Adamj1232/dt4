@@ -285,7 +285,7 @@ function App() {
                   acceleration: 9.81,
                   enable: false,
                   inverse: false,
-                  maxSpeed: 10,
+                  maxSpeed: 2,
                 },
                 path: {
                   clamp: true,
@@ -331,21 +331,21 @@ function App() {
                   height: 1080,
                 },
                 limit: 0,
-                value: 1000,
+                value: 1200,
               },
               opacity: {
                 random: {
                   enable: false,
-                  minimumValue: 0.3,
+                  minimumValue: 0.4,
                 },
                 value: {
-                  min: 0.2,
+                  min: 0.3,
                   max: 0.6,
                 },
                 animation: {
                   count: 0,
                   enable: true,
-                  speed: 1,
+                  speed: 0.6,
                   decay: 0,
                   sync: false,
                   destroy: "none",
@@ -596,7 +596,7 @@ function App() {
               },
               enable: true,
               move: {
-                radius: 8,
+                radius: 10,
               },
               position: {
                 y: width < 1300 ? 25 : 36,

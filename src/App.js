@@ -749,9 +749,9 @@ function App() {
         <h2 id="contact-title">Contact</h2>
         <p className="contact-text">
           For booking inquiries, comments, or tickets, contact
-          <a className="contact-links" href="mailto:DealerTakesFour@gmail.com">
+          <a className="contact-links" href="mailto:DealerTakes4@gmail.com">
             {" "}
-            DealerTakesFour@gmail.com
+            DealerTakes4@gmail.com
           </a>
         </p>
         <div id="social-icon-container">

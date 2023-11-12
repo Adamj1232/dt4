@@ -20,11 +20,11 @@ const Spotlight = () => {
   useEffect(() => {
     const handleMouseMove = (e) => updateSpotlight(e);
     const handleMouseUp = (e) => {
-      spotlightSize = "transparent 90px, rgba(0, 0, 0, 1) 120px)";
+      spotlightSize = "transparent 130px, rgba(0, 0, 0, 1) 160px)";
       updateSpotlight(e);
     };
     const handleMouseDown = (e) => {
-      spotlightSize = "transparent 110px, rgba(0, 0, 0, 0.9) 140px)";
+      spotlightSize = "transparent 150px, rgba(0, 0, 0, 0.9) 180px)";
       updateSpotlight(e);
     };
 

@@ -11,7 +11,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://youtube.com/embed/fCEgYGMSTD8?feature=share"
-          title="YouTube video player"
+          title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -21,7 +21,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://www.youtube.com/embed/2aRTKgbAo1c?feature=share"
-          title="YouTube video player"
+          title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -31,7 +31,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://youtube.com/embed/Oi03rAOF3Cs?feature=share"
-          title="YouTube video player"
+          title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -41,7 +41,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://www.youtube.com/embed/tpSz-eiYtYQ"
-          title="YouTube video player"
+          title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -51,7 +51,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://www.youtube.com/embed/R5zlBwYO1HQ"
-          title="YouTube video player"
+          title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -61,7 +61,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://www.youtube.com/embed/VgvotBMszUc"
-          title="YouTube video player"
+          title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen

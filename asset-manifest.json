@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/static/css/main.5cb9e486.css",
-    "main.js": "/static/js/main.beb6c847.js",
-    "static/js/932.abbe0e6f.chunk.js": "/static/js/932.abbe0e6f.chunk.js",
+    "main.js": "/static/js/main.79513cf3.js",
+    "static/js/932.34db761b.chunk.js": "/static/js/932.34db761b.chunk.js",
     "static/js/188.87914ce3.chunk.js": "/static/js/188.87914ce3.chunk.js",
     "static/js/11.fdfd9bff.chunk.js": "/static/js/11.fdfd9bff.chunk.js",
     "static/media/DT4_logo_initials.webp": "/static/media/DT4_logo_initials.56a26bbe7727f69a591f.webp",
     "static/media/DTF_Banner.webp": "/static/media/DTF_Banner.989b770ec25204a14398.webp",
     "static/media/DT4_Ullrs_Dec_2021.webp": "/static/media/DT4_Ullrs_Dec_2021.b697c685c79c51f36955.webp",
+    "index.html": "/index.html",
     "static/media/instagram.svg": "/static/media/instagram.134ef84c5584482dad55da3e531b5146.svg",
     "static/media/instagramwhite.svg": "/static/media/instagramwhite.4f3934c0a6b34412b16a6ab4901e9bf2.svg",
     "static/media/twitterwhite.svg": "/static/media/twitterwhite.0f61c06b1bdbee5c716c672683b59d88.svg",
     "static/media/mail.svg": "/static/media/mail.039e84185702b2450c29780c0a5aadca.svg",
-    "index.html": "/index.html",
     "static/media/facebook.svg": "/static/media/facebook.245d4678d185c86288fb3d5d6acb8a36.svg",
     "static/media/facebookwhite.svg": "/static/media/facebookwhite.4bf503b3da21cf16aec190a71094adf6.svg",
     "main.5cb9e486.css.map": "/static/css/main.5cb9e486.css.map",
-    "main.beb6c847.js.map": "/static/js/main.beb6c847.js.map",
-    "932.abbe0e6f.chunk.js.map": "/static/js/932.abbe0e6f.chunk.js.map",
+    "main.79513cf3.js.map": "/static/js/main.79513cf3.js.map",
+    "932.34db761b.chunk.js.map": "/static/js/932.34db761b.chunk.js.map",
     "188.87914ce3.chunk.js.map": "/static/js/188.87914ce3.chunk.js.map",
     "11.fdfd9bff.chunk.js.map": "/static/js/11.fdfd9bff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5cb9e486.css",
-    "static/js/main.beb6c847.js"
+    "static/js/main.79513cf3.js"
   ]
 }

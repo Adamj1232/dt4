@@ -40,8 +40,28 @@ const Media = () => {
           className="music-videos"
           width="475"
           height="315"
-          src="https://www.youtube.com/embed/tpSz-eiYtYQ"
+          src="https://www.youtube.com/embed/lPojkXBzrGE"
           title="Dealer Takes Four - Live Performance Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+        <iframe
+          className="music-videos"
+          width="475"
+          height="315"
+          src="https://www.youtube.com/embed/OLNoQ_mcaM4"
+          title="Dealer Takes Four - Studio recording of 'Blame It On The Radio'"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+        <iframe
+          className="music-videos"
+          width="475"
+          height="315"
+          src="https://www.youtube.com/embed/tpSz-eiYtYQ"
+          title="Dealer Takes Four - Studio recording of 'Line em Up'"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -51,7 +71,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://www.youtube.com/embed/R5zlBwYO1HQ"
-          title="Dealer Takes Four - Live Performance Video"
+          title="Dealer Takes Four - Studio recording of 'Time Will Tell'"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -61,7 +81,7 @@ const Media = () => {
           width="475"
           height="315"
           src="https://www.youtube.com/embed/VgvotBMszUc"
-          title="Dealer Takes Four - Live Performance Video"
+          title="Dealer Takes Four - Studio recording of 'Bartender'"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen

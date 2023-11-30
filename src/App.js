@@ -6,15 +6,14 @@ import "./App.css";
 import CardPng from "./images/DT4_logo_initials.webp";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
-import { ReactComponent as Twit } from "./images/twitterwhite.svg";
 import { ReactComponent as Ig } from "./images/instagramwhite.svg";
 import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
 
 import particlesOptions from "./particle_tunnel.json";
 import Spotlight from "./views/Spotlight";
+import Media from "./views/Media.js";
 
-const LazyLoadedMedia = React.lazy(() => import("./views/Media.js"));
 const LazyLoadedShows = React.lazy(() => import("./views/Shows.js"));
 const LazyLoadedMusicPlayer = React.lazy(() =>
   import("./views/MusicPlayer.js")
@@ -740,9 +739,7 @@ function App() {
         </Suspense>
       </section>
       <section className="parallax-scrolling" id="videos">
-        <Suspense fallback={<div>Loading...</div>}>
-          <LazyLoadedMedia />
-        </Suspense>
+        <Media />
       </section>
 
       <section className="parallax-scrolling" id="contact">

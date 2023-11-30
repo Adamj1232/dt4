@@ -8,6 +8,7 @@ const MusicPlayer = () => {
       <section id="music-container"></section>
       <div className="iframe-container">
         <iframe
+          loading="lazy"
           width="100%"
           height="350"
           title="Audio player for DT4 Songs"

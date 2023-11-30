@@ -7,6 +7,7 @@ const Media = () => {
       <h2 id="music-title">Videos</h2>
       <div className="video-container">
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -17,6 +18,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -27,6 +29,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -37,6 +40,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -47,6 +51,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -57,6 +62,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -67,6 +73,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"
@@ -77,6 +84,7 @@ const Media = () => {
           allowFullScreen
         />
         <iframe
+          loading="lazy"
           className="music-videos"
           width="475"
           height="315"

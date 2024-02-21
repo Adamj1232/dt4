@@ -11,29 +11,18 @@ const Media = () => {
           className="music-videos"
           width="475"
           height="315"
+          src="https://www.youtube.com/embed/dWYuOnqdWO8?si=I1aFCny_M2l2OA_6"
+          title="Dealer Takes Four playing New Country - Live Performance Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+        <iframe
+          loading="lazy"
+          className="music-videos"
+          width="475"
+          height="315"
           src="https://www.youtube.com/embed/v7SCjju9mno?si=KwqyHqZXioijCSjj"
-          title="Dealer Takes Four - Live Performance Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-        <iframe
-          loading="lazy"
-          className="music-videos"
-          width="475"
-          height="315"
-          src="https://youtube.com/embed/h2HzWIqyTR4?si=YYZK93aN5VD4s8Lv?feature=share"
-          title="Dealer Takes Four - Live Performance Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-        <iframe
-          loading="lazy"
-          className="music-videos"
-          width="475"
-          height="315"
-          src="https://youtube.com/embed/fCEgYGMSTD8?feature=share"
           title="Dealer Takes Four - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

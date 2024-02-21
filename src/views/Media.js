@@ -33,17 +33,6 @@ const Media = () => {
           className="music-videos"
           width="475"
           height="315"
-          src="https://youtube.com/embed/Oi03rAOF3Cs?feature=share"
-          title="Dealer Takes Four - Live Performance Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-        <iframe
-          loading="lazy"
-          className="music-videos"
-          width="475"
-          height="315"
           src="https://www.youtube.com/embed/dza5snWkfcQ?si=Dt36rfyH1kb2Y24H"
           title="Dealer Takes Four - Studio recording of 'Locked and Loaded'"
           frameBorder="0"

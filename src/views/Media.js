@@ -11,7 +11,7 @@ const Media = () => {
           className="music-videos"
           width="475"
           height="315"
-          src="https://www.youtube.com/embed/dWYuOnqdWO8?si=I1aFCny_M2l2OA_6"
+          src="https://www.youtube.com/embed/x_TPHqS6cpY?si=OT-5E109V6t-F76Z"
           title="Dealer Takes Four playing New Country - Live Performance Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

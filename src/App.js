@@ -96,33 +96,16 @@ function App() {
       <section className="parallax-scrolling" id="bio">
         <h2 id="bio-title">Bio</h2>
         <p className="bio-text">
-          Dealer Takes Four is a whiskey-driven rock band hailing from Denver,
-          Colorado. This six-piece powerhouse is known for their raucous live
-          shows, blending elements of classic rock, country, and pop to create a
-          sound that is uniquely their own. The band formed in 2022, quickly
-          making a name for themselves in the Denver and Colorado Mountain music
-          scene with their high-energy performances and catchy original songs.
-          Their debut EP "Burn It In" is slated to be released later this year
-          and showcases their raw and unfiltered sound that has become their
-          trademark.
+          Dealer Takes Four is the second incarnation of a band that made waves
+          throughout the Colorado and the mid-west in the 2000’s - 2010s named
+          James and the Devil. They were packing houses and pleasing crowds
+          until the lead singer passed at a tragically young age. After some
+          time apart, the original guitarist, drummer, fiddle, and bass player
+          joined back up and added keys and horns and they’ve been performing to
+          sold out venues and recording regularly. They have a unique sound and
+          show that will keep their audience on their feet and having fun all
+          night.
           <br />
-          The band's live shows are not to be missed, as they are known for
-          their whiskey-fueled performances that leave audiences wanting more.
-          With catchy hooks and anthemic choruses, Dealer Takes Four is a band
-          that will have you singing and dancing along all night long.
-          <br />
-          With the release of their first hit single "When I Come Home" in 2023,
-          DTF etched their names in the Denver scene as a band not to miss.
-          Dealer Takes Four is poised to take their whiskey-driven rock music to
-          new heights. The band is currently touring the country and making
-          waves in the music scene, leaving audiences in awe with their
-          high-energy performances and killer tunes.
-          <br />
-          Dealer Takes Four is a band that is not to be missed. They are a force
-          to be reckoned with, and their whiskey-driven rock music is guaranteed
-          to get your blood pumping. Keep an eye out for this Denver-based band,
-          as they are sure to be making waves in the music scene for years to
-          come.
         </p>
       </section>
 

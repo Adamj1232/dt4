@@ -48,11 +48,11 @@
 
 .sneaky-background {
   background-image: url("images/WinterDTF-Clean_no_bg_compressed.webp");
-  background-position: 50% 50%;
+  background-position: 50% 35%;
   background-repeat: no-repeat;
   background-size: 95%;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
 }
 
@@ -217,7 +217,7 @@ a {
 
 #music {
   background-image: url("https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg");
-  height: 750px;
+  height: 60vh;
   margin: 0;
   text-align: center;
 }
@@ -236,7 +236,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 200px auto;
+  padding: 400px auto;
 }
 
 .hidden-tunes,

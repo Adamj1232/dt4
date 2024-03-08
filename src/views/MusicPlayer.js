@@ -3,10 +3,10 @@ import React from "react";
 const MusicPlayer = () => {
   return (
     <div className="shows">
-      <h2 id="music-title">Music</h2>
+      {/* <h2 id="music-title">Music</h2> */}
       <div id="music-spacer"></div>
       <section id="music-container"></section>
-      <div className="iframe-container">
+      {/* <div className="iframe-container">
         <iframe
           loading="lazy"
           width="100%"
@@ -20,7 +20,7 @@ const MusicPlayer = () => {
         <a className="music-links" href="https://soundcloud.com/user-433267577">
           For more tunes click here
         </a>
-      </p>
+      </p> */}
     </div>
   );
 };

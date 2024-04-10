@@ -4,6 +4,7 @@ import { loadFull } from "tsparticles";
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import "./App.css";
 import CardPng from "./images/DT4_logo_initials.webp";
+import LogoPng from "./images/WinterDTF-Clean_no_bg_compressed.webp";
 import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
 import { ReactComponent as Ig } from "./images/instagramwhite.svg";
@@ -11,7 +12,7 @@ import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
 
 import particlesOptions from "./particle_tunnel.json";
-import Spotlight from "./views/Spotlight";
+// import Spotlight from "./views/Spotlight";
 import Media from "./views/Media.js";
 
 const LazyLoadedShows = React.lazy(() => import("./views/Shows.js"));
@@ -27,22 +28,24 @@ function App() {
   }, []);
 
   const renderParticles = () => {
-    if (width < 800) {
-      return (
-        <Particles
-          id="parts"
-          init={particlesInit}
-          canvasClassName="particle-canvas"
-          options={particlesOptions}
-          width="100vw"
-        />
-      );
-    }
+    // if (width < 800) {
+    return (
+      <Particles
+        id="parts"
+        init={particlesInit}
+        canvasClassName="particle-canvas"
+        options={particlesOptions}
+        width="100vw"
+      />
+    );
+    // }
   };
 
   const renderMainLogo = () => {
     if (width < 800) {
       return <img alt="king png" className="card-logo" src={CardPng} />;
+    } else {
+      return <img alt="king png" className="card-logo" src={LogoPng} />;
     }
   };
 

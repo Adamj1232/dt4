@@ -46,7 +46,7 @@
   top: 0;
 }
 
-.sneaky-background {
+/* .sneaky-background {
   background-image: url("images/WinterDTF-Clean_no_bg_compressed.webp");
   background-position: 50% 35%;
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
-}
+} */
 
 .spotlight {
   position: absolute;
@@ -345,6 +345,31 @@ iframe.music-videos {
   justify-content: center;
 }
 
+.sneaky-background {
+  display: none;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.card-logo {
+  width: 100vw;
+  height: 100vh;
+  /* margin: 184px 0; */
+  height: unset;
+  animation: zoomIn 8s;
+}
+.logo-container {
+  right: 0;
+  height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 500px) {
   .sneaky-background {
     display: none;
@@ -359,7 +384,7 @@ iframe.music-videos {
   }
   .card-logo {
     width: 100vw;
-    margin: 184px 0;
+    /* margin: 184px 0; */
     height: unset;
     animation: zoomIn 8s;
   }

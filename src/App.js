@@ -99,6 +99,18 @@ function App() {
       <section className="parallax-scrolling" id="bio">
         <h2 id="bio-title">Bio</h2>
         <p className="bio-text">
+          Experience the greatest American rock n’ roll story ever told when
+          Dealer Takes Four takes the stage. Bound by a love of rock music and
+          the Rocky Mountains, this group of soldiers, business owners, tech
+          workers, music industry professionals, and friends will bring you a
+          one-of-a-kind mash up of rock and roll, country, groove, and
+          Americana. With blazing fiddle, trumpet, and guitar harmonies
+          layered on top of heavy drums, bass, and keys, DTF is on
+          a mission to tell stories, inspire feelings, and make unforgettable
+          memories together through rich and
+          well-crafted songwriting. Dealer Takes Four is Brian Knapp, Adam
+          Carpenter, Dave Ross, Matt Stoner, Marcus Spitz, and Kurt Bradley.
+          <br />
           Dealer Takes Four is the second incarnation of a band that made waves
           throughout the Colorado and the mid-west in the 2000’s - 2010s named
           James and the Devil. They were packing houses and pleasing crowds

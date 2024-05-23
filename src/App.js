@@ -112,7 +112,7 @@ function App() {
           Carpenter, Dave Ross, Matt Stoner, Marcus Spitz, and Kurt Bradley.
           <br />
           Dealer Takes Four is the second incarnation of a band that made waves
-          throughout the Colorado and the mid-west in the 2000’s - 2010s named
+          throughout Colorado and the mid-west in the 2000’s - 2010s named
           James and the Devil. They were packing houses and pleasing crowds
           until the lead singer passed at a tragically young age. After some
           time apart, the original guitarist, drummer, fiddle, and bass player

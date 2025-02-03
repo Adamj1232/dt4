@@ -153,7 +153,7 @@ function App() {
               <IgB className="social-icon" />
             </a>
 
-            {/* <a
+            <a
               className="contact-links"
               href="https://open.spotify.com/artist/44BPi8FlVI5gKq7DW7L0Xg"
               target="_blank"
@@ -181,7 +181,7 @@ function App() {
               aria-label="YouTube"
             >
               <YouTubeIcon className="social-icon" />
-            </a> */}
+            </a>
 
             <a className="contact-links" href="mailto:dealertakes4@gmail.com">
               <Email className="social-icon" />

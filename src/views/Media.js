@@ -55,30 +55,8 @@ const Media = () => {
           className="music-videos"
           width="475"
           height="315"
-          src="https://www.youtube.com/embed/tpSz-eiYtYQ"
-          title="Dealer Takes Four - Studio recording of 'Line em Up'"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-        <iframe
-          loading="lazy"
-          className="music-videos"
-          width="475"
-          height="315"
           src="https://www.youtube.com/embed/R5zlBwYO1HQ"
           title="Dealer Takes Four - Studio recording of 'Time Will Tell'"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-        <iframe
-          loading="lazy"
-          className="music-videos"
-          width="475"
-          height="315"
-          src="https://www.youtube.com/embed/VgvotBMszUc"
-          title="Dealer Takes Four - Studio recording of 'Bartender'"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen

@@ -1,105 +1,64 @@
-import React, { useCallback, Suspense } from "react";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import "./App.css";
 import CardPng from "./images/DT4_logo_initials.webp";
 import LogoPng from "./images/WinterDTF-Clean_no_bg_compressed.webp";
-import { ReactComponent as Fb } from "./images/facebookwhite.svg";
 import { ReactComponent as FbB } from "./images/facebook.svg";
-import { ReactComponent as Ig } from "./images/instagramwhite.svg";
 import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
 
-import particlesOptions from "./particle_tunnel.json";
-// import Spotlight from "./views/Spotlight";
-import Media from "./views/Media.js";
+import ParticleBackground from "./components/ParticleBackground";
+import MainMenu from "./components/MainMenu";
+import useViewport from "./hooks/useViewport";
 
-const LazyLoadedShows = React.lazy(() => import("./views/Shows.js"));
-const LazyLoadedMusicPlayer = React.lazy(() =>
-  import("./views/MusicPlayer.js")
-);
+// Lazy load all major components
+const LazyLoadedShows = lazy(() => import("./views/Shows.js"));
+const LazyLoadedMusicPlayer = lazy(() => import("./views/MusicPlayer.js"));
+const LazyLoadedMedia = lazy(() => import("./views/Media.js"));
 
-const width = window.innerWidth;
 function App() {
-  const particlesInit = useCallback(async (main) => {
-    await loadFull(main);
-    width > 800 && loadPolygonMaskPlugin(main);
+  const { width } = useViewport();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Add loading state management
+    const timer = setTimeout(() => setIsLoading(false), 100);
+    return () => clearTimeout(timer);
   }, []);
 
-  const renderParticles = () => {
-    // if (width < 800) {
-    return (
-      <Particles
-        id="parts"
-        init={particlesInit}
-        canvasClassName="particle-canvas"
-        options={particlesOptions}
-        width="100vw"
-      />
-    );
-    // }
-  };
+  const MainLogo = () => (
+    <img 
+      alt="Dealer Takes Four logo" 
+      className="card-logo" 
+      src={width < 800 ? CardPng : LogoPng}
+      loading="eager"
+      width={width < 800 ? "200" : "400"}
+      height={width < 800 ? "100" : "200"}
+    />
+  );
 
-  const renderMainLogo = () => {
-    if (width < 800) {
-      return <img alt="king png" className="card-logo" src={CardPng} />;
-    } else {
-      return <img alt="king png" className="card-logo" src={LogoPng} />;
-    }
-  };
+  if (isLoading) {
+    return <div className="loading-screen">Loading...</div>;
+  }
 
   return (
     <div>
       <div className="sneaky-background" />
-      <div className="parallax-scrolling">{renderParticles()}</div>
-      <section id="header">
-        <div id="main-menu">
-          <a className="menu-links" id="main-menu-tour" href="#tour">
-            tour
-          </a>
-          <a className="menu-links" id="main-menu-music" href="#music">
-            music
-          </a>
-          <a className="menu-links" id="main-menu-bio" href="#bio">
-            bio
-          </a>
-          <a className="menu-links" id="main-menu-contact" href="#contact">
-            contact
-          </a>
-          <div id="main-menu-social">
-            <a
-              className="main-social-links"
-              href="https://www.facebook.com/DealerTakesFour"
-            >
-              <Fb className="menu-social-icon" />
-            </a>
-            {/* <a
-              className="main-social-links"
-              href="https://twitter.com/horseysurprise"
-              >
-              <Twit className="menu-social-icon"/>
-            </a> */}
-            <a
-              className="main-social-links"
-              href="https://www.instagram.com/dealertakes4/"
-            >
-              <Ig className="menu-social-icon" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="parallax-scrolling">
+        <ParticleBackground />
+      </div>
+      
+      <MainMenu />
+      
       <div className="main-title-container">
         <div className="logo-container">
-          {/* <King /> */}
-          {renderMainLogo()}
+          <MainLogo />
         </div>
       </div>
 
       <section className="parallax-scrolling" id="bio">
         <h2 id="bio-title">Bio</h2>
         <p className="bio-text">
-          Experience the greatest American rock n’ roll story ever told when
+          Experience the greatest American rock n' roll story ever told when
           Dealer Takes Four takes the stage. Bound by a love of rock music and
           the Rocky Mountains, this group of soldiers, business owners, tech
           workers, music industry professionals, and friends will bring you a
@@ -112,11 +71,11 @@ function App() {
           Carpenter, Dave Ross, Matt Stoner, Marcus Spitz, and Kurt Bradley.
           <br />
           Dealer Takes Four is the second incarnation of a band that made waves
-          throughout Colorado and the mid-west in the 2000’s - 2010s named
+          throughout Colorado and the mid-west in the 2000's - 2010s named
           James and the Devil. They were packing houses and pleasing crowds
           until the lead singer passed at a tragically young age. After some
           time apart, the original guitarist, drummer, fiddle, and bass player
-          joined back up and added keys and horns and they’ve been performing to
+          joined back up and added keys and horns and they've been performing to
           sold out venues and recording regularly. They have a unique sound and
           show that will keep their audience on their feet and having fun all
           night.
@@ -124,21 +83,22 @@ function App() {
         </p>
       </section>
 
-      <hr></hr>
-      <section className="parallax-scrolling" id="tour">
-        <Suspense fallback={<div>Loading...</div>}>
+      <hr />
+      
+      {/* Lazy loaded sections */}
+      <Suspense fallback={<div className="section-loader">Loading...</div>}>
+        <section className="parallax-scrolling" id="tour">
           <LazyLoadedShows />
-        </Suspense>
-      </section>
+        </section>
 
-      <section className="parallax-scrolling" id="music">
-        <Suspense fallback={<div>Loading...</div>}>
+        <section className="parallax-scrolling" id="music">
           <LazyLoadedMusicPlayer />
-        </Suspense>
-      </section>
-      <section className="parallax-scrolling" id="videos">
-        <Media />
-      </section>
+        </section>
+
+        <section className="parallax-scrolling" id="videos">
+          <LazyLoadedMedia />
+        </section>
+      </Suspense>
 
       <section className="parallax-scrolling" id="contact">
         <h2 id="contact-title">Contact</h2>

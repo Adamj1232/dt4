@@ -177,7 +177,7 @@ a {
 .widget-container {
   display: inline-block;
   width: 100%;
-  height: 550px;
+  height: 480px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -217,9 +217,12 @@ a {
 
 #music {
   background-image: url("https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg");
-  height: 60vh;
+  height: 56vh;
   margin: 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #videos {

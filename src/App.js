@@ -5,6 +5,9 @@ import LogoPng from "./images/WinterDTF-Clean_no_bg_compressed.webp";
 import { ReactComponent as FbB } from "./images/facebook.svg";
 import { ReactComponent as IgB } from "./images/instagram.svg";
 import { ReactComponent as Email } from "./images/mail.svg";
+import { ReactComponent as SpotifyIcon } from "./images/spotifywhite.svg";
+import { ReactComponent as AppleMusicIcon } from "./images/applemusicwhite.svg";
+import { ReactComponent as YouTubeIcon } from "./images/youtubewhite.svg";
 
 import ParticleBackground from "./components/ParticleBackground";
 import MainMenu from "./components/MainMenu";
@@ -92,7 +95,7 @@ function App() {
         <hr />
 
         <CloudinaryContext cloudName="dkf9qmqxa">
-          <Suspense 
+          <Suspense
             fallback={
               <div className="loading-skeleton">
                 <div className="skeleton-image"></div>
@@ -120,7 +123,6 @@ function App() {
           <section className="parallax-scrolling" id="videos">
             <LazyLoadedMedia />
           </section>
-
         </Suspense>
 
         <section className="parallax-scrolling" id="contact">
@@ -133,23 +135,55 @@ function App() {
             </a>
           </p>
           <div id="social-icon-container">
-            '
             <a
               className="contact-links"
-              href="https://www.facebook.com/tigrdenver/"
+              href="https://www.facebook.com/DealerTakesFour/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FbB className="social-icon" />
             </a>
-            {/* <a className="contact-links" href="https://twitter.com/horseysurprise">
-                <img alt="twitter link" className="social-icon" src={require("./images/twitter.svg")}/>
-              </a> */}
+
             <a
               className="contact-links"
-              href="https://www.instagram.com/ghostrevue/"
+              href="https://www.instagram.com/dealertakes4/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <IgB className="social-icon" />
             </a>
-            <a className="contact-links" href="mailto:ghostrevue@gmail.com">
+
+            <a
+              className="contact-links"
+              href="https://open.spotify.com/artist/44BPi8FlVI5gKq7DW7L0Xg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Spotify"
+            >
+              <SpotifyIcon className="social-icon" />
+            </a>
+
+            <a
+              className="contact-links"
+              href="https://music.apple.com/artist/1663002784"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Apple Music"
+            >
+              <AppleMusicIcon className="social-icon" />
+            </a>
+
+            <a
+              className="contact-links"
+              href="https://www.youtube.com/@dealertakesfour"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <YouTubeIcon className="social-icon" />
+            </a>
+
+            <a className="contact-links" href="mailto:dealertakes4@gmail.com">
               <Email className="social-icon" />
             </a>
           </div>

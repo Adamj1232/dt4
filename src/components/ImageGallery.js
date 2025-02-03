@@ -105,7 +105,7 @@ const ImageGallery = () => {
 
   const slides = photos.map(photo => ({
     src: `https://res.cloudinary.com/dkf9qmqxa/image/upload/c_scale,w_1920,q_85/${photo.publicId}`,
-    download: `https://res.cloudinary.com/dkf9qmqxa/image/upload/fl_attachment:${photo.id}/${photo.publicId}`,
+    download: `https://res.cloudinary.com/dkf9qmqxa/image/upload/fl_attachment/${photo.publicId}`,
   }));
 
   // Prevent propagation of click events in lightbox

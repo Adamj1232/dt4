@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b9e2728e.css",
-    "main.js": "/static/js/main.309f5728.js",
+    "main.css": "/static/css/main.fc917aa2.css",
+    "main.js": "/static/js/main.2ed3d869.js",
     "static/js/188.faa570c9.chunk.js": "/static/js/188.faa570c9.chunk.js",
     "static/js/11.9fbc54e5.chunk.js": "/static/js/11.9fbc54e5.chunk.js",
     "static/js/932.7025a0ab.chunk.js": "/static/js/932.7025a0ab.chunk.js",
@@ -17,15 +17,15 @@
     "static/media/spotifywhite.svg": "/static/media/spotifywhite.e78f818600ee071371425eb58cb3cbf6.svg",
     "static/media/youtubewhite.svg": "/static/media/youtubewhite.ef670affe53fbd8b253e0187a5471a14.svg",
     "static/media/applemusicwhite.svg": "/static/media/applemusicwhite.080eef87ceefca66c47385c5be97da97.svg",
-    "main.b9e2728e.css.map": "/static/css/main.b9e2728e.css.map",
-    "main.309f5728.js.map": "/static/js/main.309f5728.js.map",
+    "main.fc917aa2.css.map": "/static/css/main.fc917aa2.css.map",
+    "main.2ed3d869.js.map": "/static/js/main.2ed3d869.js.map",
     "188.faa570c9.chunk.js.map": "/static/js/188.faa570c9.chunk.js.map",
     "11.9fbc54e5.chunk.js.map": "/static/js/11.9fbc54e5.chunk.js.map",
     "932.7025a0ab.chunk.js.map": "/static/js/932.7025a0ab.chunk.js.map",
     "496.b83e57c3.chunk.js.map": "/static/js/496.b83e57c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9e2728e.css",
-    "static/js/main.309f5728.js"
+    "static/css/main.fc917aa2.css",
+    "static/js/main.2ed3d869.js"
   ]
 }

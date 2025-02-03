@@ -217,12 +217,16 @@ a {
 
 #music {
   background-image: url("https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 56vh;
   margin: 0;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 #videos {
@@ -512,5 +516,13 @@ iframe.music-videos {
     width: auto;
     height: calc(100vh - 100px);
     margin: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #music {
+    background-position: center center;
+    background-attachment: scroll;
+    height: 40vh; /* Shorter height for mobile */
   }
 }

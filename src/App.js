@@ -9,8 +9,10 @@ import { ReactComponent as Email } from "./images/mail.svg";
 import ParticleBackground from "./components/ParticleBackground";
 import MainMenu from "./components/MainMenu";
 import useViewport from "./hooks/useViewport";
-import OptimizedImage from './components/OptimizedImage';
-import SEOHead from './components/SEOHead';
+import OptimizedImage from "./components/OptimizedImage";
+import SEOHead from "./components/SEOHead";
+import { CloudinaryContext } from "cloudinary-react";
+import ImageGallery from "./components/ImageGallery";
 
 // Lazy load all major components
 const LazyLoadedShows = lazy(() => import("./views/Shows.js"));
@@ -28,10 +30,10 @@ function App() {
   }, []);
 
   const MainLogo = () => (
-    <OptimizedImage 
+    <OptimizedImage
       src={width < 800 ? CardPng : LogoPng}
-      alt="Dealer Takes Four logo" 
-      className="card-logo" 
+      alt="Dealer Takes Four logo"
+      className="card-logo"
       width={width < 800 ? "200" : "400"}
       height={width < 800 ? "100" : "200"}
       loading="eager"
@@ -50,9 +52,9 @@ function App() {
         <div className="parallax-scrolling">
           <ParticleBackground />
         </div>
-        
+
         <MainMenu />
-        
+
         <div className="main-title-container">
           <div className="logo-container">
             <MainLogo />
@@ -68,27 +70,43 @@ function App() {
             workers, music industry professionals, and friends will bring you a
             one-of-a-kind mash up of rock and roll, country, groove, and
             Americana. With blazing fiddle, trumpet, and guitar harmonies
-            layered on top of heavy drums, bass, and keys, DTF is on
-            a mission to tell stories, inspire feelings, and make unforgettable
-            memories together through rich and
-            well-crafted songwriting. Dealer Takes Four is Brian Knapp, Adam
-            Carpenter, Dave Ross, Matt Stoner, Marcus Spitz, and Kurt Bradley.
+            layered on top of heavy drums, bass, and keys, DTF is on a mission
+            to tell stories, inspire feelings, and make unforgettable memories
+            together through rich and well-crafted songwriting. Dealer Takes
+            Four is Brian Knapp, Adam Carpenter, Dave Ross, Matt Stoner, Marcus
+            Spitz, and Kurt Bradley.
             <br />
-            Dealer Takes Four is the second incarnation of a band that made waves
-            throughout Colorado and the mid-west in the 2000's - 2010s named
-            James and the Devil. They were packing houses and pleasing crowds
-            until the lead singer passed at a tragically young age. After some
-            time apart, the original guitarist, drummer, fiddle, and bass player
-            joined back up and added keys and horns and they've been performing to
-            sold out venues and recording regularly. They have a unique sound and
-            show that will keep their audience on their feet and having fun all
-            night.
+            Dealer Takes Four is the second incarnation of a band that made
+            waves throughout Colorado and the mid-west in the 2000's - 2010s
+            named James and the Devil. They were packing houses and pleasing
+            crowds until the lead singer passed at a tragically young age. After
+            some time apart, the original guitarist, drummer, fiddle, and bass
+            player joined back up and added keys and horns and they've been
+            performing to sold out venues and recording regularly. They have a
+            unique sound and show that will keep their audience on their feet
+            and having fun all night.
             <br />
           </p>
         </section>
 
         <hr />
-        
+
+        <CloudinaryContext cloudName="dkf9qmqxa">
+          <Suspense 
+            fallback={
+              <div className="loading-skeleton">
+                <div className="skeleton-image"></div>
+                <div className="skeleton-thumbnails">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="skeleton-thumbnail"></div>
+                  ))}
+                </div>
+              </div>
+            }
+          >
+            <ImageGallery />
+          </Suspense>
+        </CloudinaryContext>
         {/* Lazy loaded sections */}
         <Suspense fallback={<div className="section-loader">Loading...</div>}>
           <section className="parallax-scrolling" id="tour">
@@ -102,6 +120,7 @@ function App() {
           <section className="parallax-scrolling" id="videos">
             <LazyLoadedMedia />
           </section>
+
         </Suspense>
 
         <section className="parallax-scrolling" id="contact">

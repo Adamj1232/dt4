@@ -146,7 +146,7 @@ function App() {
 
             <a
               className="contact-links"
-              href="https://www.instagram.com/dealertakes4/"
+              href="https://www.instagram.com/dealertakesfour/"
               target="_blank"
               rel="noopener noreferrer"
             >

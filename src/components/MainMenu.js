@@ -33,7 +33,7 @@ export default function MainMenu() {
           </a>
           <a
             className="main-social-links"
-            href="https://www.instagram.com/dealertakes4/"
+            href="https://www.instagram.com/dealertakesfour/"
             aria-label="Instagram"
             target="_blank"
             rel="noopener noreferrer"

@@ -501,6 +501,7 @@ iframe.music-videos {
     top: calc(50vh - 109px);
     left: calc(50vw - 150px);
   }
+
 }
 
 @media screen and (min-width: 1300px) {

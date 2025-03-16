@@ -1,24 +1,38 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
-// Register the service worker
-serviceWorker.register();
+// Register service worker for offline capabilities
+serviceWorker.register({
+  onUpdate: registration => {
+    const waitingServiceWorker = registration.waiting;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    if (waitingServiceWorker) {
+      waitingServiceWorker.addEventListener("statechange", event => {
+        if (event.target.state === "activated") {
+          window.location.reload();
+        }
+      });
+      waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
+    }
+  }
+});
 
-// Report web vitals
-reportWebVitals(console.log); // Replace with your analytics callback if needed
+// Report web vitals only in production
+if (process.env.NODE_ENV === 'production') {
+  reportWebVitals(metric => {
+    // Send to analytics
+    console.log(metric);
+  });
+}

@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.d6b008f9.css",
-    "main.js": "/static/js/main.0cdd12a4.js",
-    "static/js/188.faa570c9.chunk.js": "/static/js/188.faa570c9.chunk.js",
-    "static/js/11.9fbc54e5.chunk.js": "/static/js/11.9fbc54e5.chunk.js",
-    "static/js/932.7025a0ab.chunk.js": "/static/js/932.7025a0ab.chunk.js",
+    "main.js": "/static/js/main.327362ad.js",
+    "shows.js": "/static/js/shows.01af6cc7.chunk.js",
+    "music-player.js": "/static/js/music-player.045b17d6.chunk.js",
+    "media.js": "/static/js/media.d7433dcd.chunk.js",
     "static/js/496.b83e57c3.chunk.js": "/static/js/496.b83e57c3.chunk.js",
     "static/media/WinterDTF-Clean_no_bg_compressed.webp": "/static/media/WinterDTF-Clean_no_bg_compressed.d99c9553b676e53dd990.webp",
     "static/media/DT4_logo_initials.webp": "/static/media/DT4_logo_initials.56a26bbe7727f69a591f.webp",
@@ -18,14 +18,14 @@
     "static/media/youtubewhite.svg": "/static/media/youtubewhite.6b178a78322351e605071ef06aebb68b.svg",
     "static/media/applemusicwhite.svg": "/static/media/applemusicwhite.fa6122fa1d58f221fe4086b118b97b37.svg",
     "main.d6b008f9.css.map": "/static/css/main.d6b008f9.css.map",
-    "main.0cdd12a4.js.map": "/static/js/main.0cdd12a4.js.map",
-    "188.faa570c9.chunk.js.map": "/static/js/188.faa570c9.chunk.js.map",
-    "11.9fbc54e5.chunk.js.map": "/static/js/11.9fbc54e5.chunk.js.map",
-    "932.7025a0ab.chunk.js.map": "/static/js/932.7025a0ab.chunk.js.map",
+    "main.327362ad.js.map": "/static/js/main.327362ad.js.map",
+    "shows.01af6cc7.chunk.js.map": "/static/js/shows.01af6cc7.chunk.js.map",
+    "music-player.045b17d6.chunk.js.map": "/static/js/music-player.045b17d6.chunk.js.map",
+    "media.d7433dcd.chunk.js.map": "/static/js/media.d7433dcd.chunk.js.map",
     "496.b83e57c3.chunk.js.map": "/static/js/496.b83e57c3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6b008f9.css",
-    "static/js/main.0cdd12a4.js"
+    "static/js/main.327362ad.js"
   ]
 }

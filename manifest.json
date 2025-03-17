@@ -1,6 +1,7 @@
 {
   "short_name": "DTF",
   "name": "Dealer Takes Four",
+  "description": "High-energy rock band from Denver, Colorado featuring a unique blend of rock, country, and Americana music.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +11,19 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0c0c0c",
+  "background_color": "#0c0c0c",
+  "categories": ["music", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Tour Dates",
+      "url": "/#tour",
+      "description": "View upcoming shows"
+    },
+    {
+      "name": "Music",
+      "url": "/#music",
+      "description": "Listen to our music"
+    }
+  ]
 }

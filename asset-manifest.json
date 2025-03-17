@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.329ce902.css",
+    "main.css": "/static/css/main.d06cab05.css",
     "main.js": "/static/js/main.2a43d12c.js",
     "static/js/738.965151ac.chunk.js": "/static/js/738.965151ac.chunk.js",
     "static/js/398.b0940bf3.chunk.js": "/static/js/398.b0940bf3.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/applemusicwhite.svg": "/static/media/applemusicwhite.fa6122fa1d58f221fe4086b118b97b37.svg"
   },
   "entrypoints": [
-    "static/css/main.329ce902.css",
+    "static/css/main.d06cab05.css",
     "static/js/main.2a43d12c.js"
   ]
 }

@@ -1,42 +1,56 @@
 import { Helmet } from 'react-helmet';
 
 export default function SEOHead() {
+  const baseUrl = 'https://www.dealertakesfour.com';
+  
   return (
     <Helmet>
+      {/* Basic Meta Tags */}
+      <html lang="en" />
       <title>Dealer Takes Four - High-Energy Rock Band from Denver, Colorado</title>
-      <meta name="description" content="Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies." />
+      <meta name="description" content="Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies. Book us for your next event!" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta name="theme-color" content="#0c0c0c" />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Dealer Takes Four" />
+      <meta name="geo.region" content="US-CO" />
+      <meta name="geo.placename" content="Denver" />
       
       {/* Keywords */}
-      <meta name="keywords" content="Dealer Takes Four, DTF, DT4, James and The Devil, Denver Rock Band, Live Music Colorado, Rock Music, Country Rock, Americana, Live Entertainment Denver" />
+      <meta name="keywords" content="Dealer Takes Four, Denver Rock Band, Live Music Colorado, Rock and Roll, Country Rock, Americana Music, Live Entertainment Denver, James and the Devil, Colorado Music" />
       
       {/* Open Graph tags */}
       <meta property="og:title" content="Dealer Takes Four - High-Energy Rock Band from Denver" />
       <meta property="og:description" content="Experience the unique sound of Dealer Takes Four - a powerful blend of rock, country, and Americana music from Denver, Colorado. Book us for your next event!" />
-      <meta property="og:image" content="https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg" />
-      <meta property="og:url" content="https://www.dealertakesfour.com" />
+      <meta property="og:image" content={`${baseUrl}/images/WinterDTF-Clean_no_bg_compressed.webp`} />
+      <meta property="og:image:alt" content="Dealer Takes Four band photo" />
+      <meta property="og:url" content={baseUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Dealer Takes Four" />
+      <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Dealer Takes Four - Denver Rock Band" />
       <meta name="twitter:description" content="Experience the unique sound of Dealer Takes Four - a powerful blend of rock, country, and Americana music from Denver, Colorado." />
-      <meta name="twitter:image" content="https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg" />
+      <meta name="twitter:image" content={`${baseUrl}/images/WinterDTF-Clean_no_bg_compressed.webp`} />
+      <meta name="twitter:image:alt" content="Dealer Takes Four band photo" />
       
       {/* Canonical URL */}
-      <link rel="canonical" href="https://www.dealertakesfour.com" />
+      <link rel="canonical" href={baseUrl} />
       
       {/* Preload critical assets */}
       <link rel="preload" href="/images/DT4_logo_initials.webp" as="image" fetchpriority="high" />
       <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
       
-      {/* PWA related tags */}
+      {/* Favicons and PWA */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="apple-touch-icon" href="/images/DT4_logo_initials.webp" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <meta name="apple-mobile-web-app-title" content="Dealer Takes Four" />
       
       {/* Structured Data */}
       <script type="application/ld+json">
@@ -44,10 +58,15 @@ export default function SEOHead() {
           "@context": "http://schema.org",
           "@type": "MusicGroup",
           "name": "Dealer Takes Four",
-          "url": "https://www.dealertakesfour.com",
-          "image": "https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg",
+          "url": baseUrl,
+          "logo": `${baseUrl}/images/DT4_logo_initials.webp`,
+          "image": `${baseUrl}/images/WinterDTF-Clean_no_bg_compressed.webp`,
           "description": "Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies.",
           "genre": ["Rock", "Country Rock", "Americana"],
+          "foundingLocation": {
+            "@type": "Place",
+            "name": "Denver, Colorado"
+          },
           "sameAs": [
             "https://www.facebook.com/DealerTakesFour",
             "https://www.instagram.com/dealertakesfour",
@@ -58,27 +77,33 @@ export default function SEOHead() {
           "member": [
             {
               "@type": "Person",
-              "name": "Brian Knapp"
+              "name": "Brian Knapp",
+              "roleName": "Band Member"
             },
             {
               "@type": "Person",
-              "name": "Adam Carpenter"
+              "name": "Adam Carpenter",
+              "roleName": "Band Member"
             },
             {
               "@type": "Person",
-              "name": "Dave Ross"
+              "name": "Dave Ross",
+              "roleName": "Band Member"
             },
             {
               "@type": "Person",
-              "name": "Matt Stoner"
+              "name": "Matt Stoner",
+              "roleName": "Band Member"
             },
             {
               "@type": "Person",
-              "name": "Marcus Spitz"
+              "name": "Marcus Spitz",
+              "roleName": "Band Member"
             },
             {
               "@type": "Person",
-              "name": "Brent Hanibal"
+              "name": "Kurt Bradley",
+              "roleName": "Band Member"
             }
           ],
           "location": {
@@ -99,6 +124,22 @@ export default function SEOHead() {
               "@type": "Offer",
               "url": "mailto:DealerTakes4@gmail.com",
               "availability": "https://schema.org/InStock"
+            }
+          },
+          "potentialAction": {
+            "@type": "BookAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "mailto:DealerTakes4@gmail.com",
+              "inLanguage": "en-US",
+              "actionPlatform": [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform"
+              ]
+            },
+            "result": {
+              "@type": "BookBand",
+              "name": "Book Dealer Takes Four"
             }
           }
         })}

@@ -102,7 +102,7 @@ export default function SEOHead() {
             },
             {
               "@type": "Person",
-              "name": "Kurt Bradley",
+              "name": "Brent Hannibal",
               "roleName": "Band Member"
             }
           ],

@@ -1,5 +1,16 @@
 import React, { useEffect } from 'react';
 
+const srOnlyStyle = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: '0',
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0,0,0,0)',
+  border: '0'
+};
+
 /**
  * @typedef {Object} Theme
  * @property {string} [backgroundColor] - Background color in rgba format
@@ -39,8 +50,9 @@ const BandsInTownWidget = ({
   }, []);
 
   return (
-    <div
+    <a
       className="bit-widget-initializer"
+      href={`https://www.bandsintown.com/${encodeURIComponent(artistId)}`}
       data-artist-name={artistId}
       data-background-color={theme.backgroundColor}
       data-separator-color={theme.separatorColor}
@@ -65,6 +77,7 @@ const BandsInTownWidget = ({
       data-date-border-width="1px"
       data-date-capitalization="capitalize"
       data-date-border-radius="10px"
+      
       data-event-ticket-cta-size="medium"
       data-event-custom-ticket-text=""
       data-event-ticket-text="TICKETS"
@@ -74,10 +87,12 @@ const BandsInTownWidget = ({
       data-event-ticket-cta-border-color="rgba(74,74,74,1)"
       data-event-ticket-cta-border-width="0px"
       data-event-ticket-cta-border-radius="2px"
+      
       data-sold-out-button-text-color="rgba(255,255,255,1)"
       data-sold-out-button-background-color="rgba(74,74,74,1)"
       data-sold-out-button-border-color="rgba(74,74,74,1)"
       data-sold-out-button-clickable="true"
+      
       data-event-rsvp-position="left"
       data-event-rsvp-cta-size="medium"
       data-event-rsvp-only-show-icon="false"
@@ -88,6 +103,7 @@ const BandsInTownWidget = ({
       data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
       data-event-rsvp-cta-border-width="1px"
       data-event-rsvp-cta-border-radius="2px"
+      
       data-follow-section-position="top"
       data-follow-section-alignment="center"
       data-follow-section-header-text="Get updates on new shows, new music, and more"
@@ -99,6 +115,7 @@ const BandsInTownWidget = ({
       data-follow-section-cta-border-color="rgba(74,74,74,1)"
       data-follow-section-cta-border-width="0px"
       data-follow-section-cta-border-radius="2px"
+      
       data-play-my-city-position="bottom"
       data-play-my-city-alignment="center"
       data-play-my-city-header-text="Don't see a show near you?"
@@ -110,11 +127,25 @@ const BandsInTownWidget = ({
       data-play-my-city-cta-border-color="rgba(74,74,74,1)"
       data-play-my-city-cta-border-width="0px"
       data-play-my-city-cta-border-radius="2px"
+      
+      data-optin-font=""
+      data-optin-text-color=""
+      data-optin-bg-color=""
+      data-optin-cta-text-color=""
+      data-optin-cta-bg-color=""
+      data-optin-cta-border-width=""
+      data-optin-cta-border-radius=""
+      data-optin-cta-border-color=""
+      
       data-language="en"
       data-layout-breakpoint="700"
+      data-app-id=""
+      data-affil-code=""
       data-bit-logo-position="bottomRight"
       data-bit-logo-color="rgba(241,238,238,1)"
-    />
+    >
+      <span style={srOnlyStyle}>View tour dates on Bandsintown</span>
+    </a>
   );
 };
 

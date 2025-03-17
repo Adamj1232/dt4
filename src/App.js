@@ -77,7 +77,7 @@ function App() {
             to tell stories, inspire feelings, and make unforgettable memories
             together through rich and well-crafted songwriting. Dealer Takes
             Four is Brian Knapp, Adam Carpenter, Dave Ross, Matt Stoner, Marcus
-            Spitz, and Kurt Bradley.
+            Spitz, and Brent Hannibal.
             <br />
             Dealer Takes Four is the second incarnation of a band that made
             waves throughout Colorado and the mid-west in the 2000's - 2010s

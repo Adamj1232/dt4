@@ -1,23 +1,23 @@
-import React from 'react'
-
+import React from "react";
+import BandsInTownWidget from "../components/BandsInTownWidget";
+const bandsInTownArtistId = "id_15581154";
 const Shows = () => {
   return (
     <div className="shows">
-        <h2 id="tour-title">Shows</h2>
-        <div className="widget_iframe widget-container">
-          <iframe
-            loading="lazy"
-            title="tour-dates"
-            className="widget_iframe tour-widget"
-            src="https://www.reverbnation.com/widget_code/html_widget/artist_8523411?widget_id=52&pwc[design]=default&pwc[background_color]=%23333333&pwc[layout]=detailed&pwc[show_map]=0%2C1&pwc[size]=fit"
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            scrolling="no"
-          ></iframe>
-        </div>
+      <h2 id="tour-title">Shows</h2>
+      <div className="widget_iframe widget-container">
+        <BandsInTownWidget
+          artistId={bandsInTownArtistId}
+          theme={{
+            backgroundColor: "rgba(66,63,63,1)",
+            separatorColor: "rgba(192,36,36,1)",
+            textColor: "rgba(241,238,238,1)",
+            dateFormat: "MMM. D, YYYY",
+          }}
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Shows
+export default Shows;

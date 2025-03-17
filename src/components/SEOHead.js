@@ -4,12 +4,12 @@ export default function SEOHead() {
   return (
     <Helmet>
       <title>Dealer Takes Four - High-Energy Rock Band from Denver, Colorado</title>
-      <meta name="description" content="Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies. Book us for your next event!" />
+      <meta name="description" content="Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies." />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta name="theme-color" content="#0c0c0c" />
       
       {/* Keywords */}
-      <meta name="keywords" content="Dealer Takes Four, Denver Rock Band, Live Music Colorado, Rock and Roll, Country Rock, Americana Music, Live Entertainment Denver" />
+      <meta name="keywords" content="Dealer Takes Four, DTF, DT4, James and The Devil, Denver Rock Band, Live Music Colorado, Rock Music, Country Rock, Americana, Live Entertainment Denver" />
       
       {/* Open Graph tags */}
       <meta property="og:title" content="Dealer Takes Four - High-Energy Rock Band from Denver" />
@@ -78,7 +78,7 @@ export default function SEOHead() {
             },
             {
               "@type": "Person",
-              "name": "Kurt Bradley"
+              "name": "Brent Hanibal"
             }
           ],
           "location": {

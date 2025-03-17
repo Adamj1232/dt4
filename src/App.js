@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useEffect, memo } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import "./App.css";
 import CardPng from "./images/DT4_logo_initials.webp";
 import LogoPng from "./images/WinterDTF-Clean_no_bg_compressed.webp";
@@ -17,42 +17,41 @@ import SEOHead from "./components/SEOHead";
 import { CloudinaryContext } from "cloudinary-react";
 import ImageGallery from "./components/ImageGallery";
 
-// Lazy load all major components with preload hints
-const LazyLoadedShows = lazy(() => import(/* webpackChunkName: "shows" */ "./views/Shows.js"));
-const LazyLoadedMusicPlayer = lazy(() => import(/* webpackChunkName: "music-player" */ "./views/MusicPlayer.js"));
-const LazyLoadedMedia = lazy(() => import(/* webpackChunkName: "media" */ "./views/Media.js"));
-
-// Memoize MainLogo component to prevent unnecessary re-renders
-const MainLogo = memo(({ width }) => (
-  <OptimizedImage
-    src={width < 800 ? CardPng : LogoPng}
-    alt="Dealer Takes Four logo"
-    className="card-logo"
-    width={width < 800 ? "200" : "400"}
-    height={width < 800 ? "100" : "200"}
-    loading="eager"
-    fetchpriority="high"
-  />
-));
+// Lazy load all major components
+const LazyLoadedShows = lazy(() => import("./views/Shows.js"));
+const LazyLoadedMusicPlayer = lazy(() => import("./views/MusicPlayer.js"));
+const LazyLoadedMedia = lazy(() => import("./views/Media.js"));
 
 function App() {
   const { width } = useViewport();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Optimize loading state with requestIdleCallback
-    const timer = window.requestIdleCallback(() => setIsLoading(false), { timeout: 2000 });
-    return () => window.cancelIdleCallback(timer);
+    // Add loading state management
+    const timer = setTimeout(() => setIsLoading(false), 100);
+    return () => clearTimeout(timer);
   }, []);
 
+  const MainLogo = () => (
+    <OptimizedImage
+      src={width < 800 ? CardPng : LogoPng}
+      alt="Dealer Takes Four logo"
+      className="card-logo"
+      width={width < 800 ? "200" : "400"}
+      height={width < 800 ? "100" : "200"}
+      loading="eager"
+    />
+  );
+
   if (isLoading) {
-    return <div className="loading-screen" aria-label="Loading content">Loading...</div>;
+    return <div className="loading-screen">Loading...</div>;
   }
 
   return (
     <>
       <SEOHead />
       <div>
+        <div className="sneaky-background" />
         <div className="parallax-scrolling">
           <ParticleBackground />
         </div>
@@ -61,7 +60,7 @@ function App() {
 
         <div className="main-title-container">
           <div className="logo-container">
-            <MainLogo width={width} />
+            <MainLogo />
           </div>
         </div>
 
@@ -89,6 +88,7 @@ function App() {
             performing to sold out venues and recording regularly. They have a
             unique sound and show that will keep their audience on their feet
             and having fun all night.
+            <br />
           </p>
         </section>
 
@@ -97,7 +97,7 @@ function App() {
         <CloudinaryContext cloudName="dkf9qmqxa">
           <Suspense
             fallback={
-              <div className="loading-skeleton" aria-label="Loading gallery">
+              <div className="loading-skeleton">
                 <div className="skeleton-image"></div>
                 <div className="skeleton-thumbnails">
                   {[...Array(5)].map((_, i) => (
@@ -110,8 +110,8 @@ function App() {
             <ImageGallery />
           </Suspense>
         </CloudinaryContext>
-
-        <Suspense fallback={<div className="section-loader" aria-label="Loading section">Loading...</div>}>
+        {/* Lazy loaded sections */}
+        <Suspense fallback={<div className="section-loader">Loading...</div>}>
           <section className="parallax-scrolling" id="tour">
             <LazyLoadedShows />
           </section>
@@ -140,7 +140,6 @@ function App() {
               href="https://www.facebook.com/DealerTakesFour/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit our Facebook page"
             >
               <FbB className="social-icon" />
             </a>
@@ -150,7 +149,6 @@ function App() {
               href="https://www.instagram.com/dealertakesfour/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Follow us on Instagram"
             >
               <IgB className="social-icon" />
             </a>
@@ -160,7 +158,7 @@ function App() {
               href="https://open.spotify.com/artist/44BPi8FlVI5gKq7DW7L0Xg"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Listen on Spotify"
+              aria-label="Spotify"
             >
               <SpotifyIcon className="social-icon" />
             </a>
@@ -170,7 +168,7 @@ function App() {
               href="https://music.apple.com/artist/1663002784"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Listen on Apple Music"
+              aria-label="Apple Music"
             >
               <AppleMusicIcon className="social-icon" />
             </a>
@@ -180,16 +178,12 @@ function App() {
               href="https://www.youtube.com/@dealertakesfour"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Watch on YouTube"
+              aria-label="YouTube"
             >
               <YouTubeIcon className="social-icon" />
             </a>
 
-            <a 
-              className="contact-links" 
-              href="mailto:dealertakes4@gmail.com"
-              aria-label="Email us"
-            >
+            <a className="contact-links" href="mailto:dealertakes4@gmail.com">
               <Email className="social-icon" />
             </a>
           </div>

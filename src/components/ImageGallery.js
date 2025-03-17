@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import { Blurhash } from "react-blurhash";
 import Lightbox from 'yet-another-react-lightbox';
@@ -15,7 +15,7 @@ const ImageGallery = () => {
   const [mainImageLoaded, setMainImageLoaded] = useState(false);
   const [preloadedLightbox, setPreloadedLightbox] = useState(false);
 
-  const photos = [
+  const photos = useMemo(() => [
     { id: "photo9", publicId: "dtf/1.jpg" },
     { id: "photo2", publicId: "dtf/3.jpg" },
     { id: "photo3", publicId: "dtf/4.jpg" },
@@ -25,7 +25,7 @@ const ImageGallery = () => {
     { id: "photo6", publicId: "dtf/7.jpg" },
     { id: "photo7", publicId: "dtf/8.jpg" },
     { id: "photo8", publicId: "dtf/9.jpg" },
-  ];
+  ], []);
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -62,7 +62,7 @@ const ImageGallery = () => {
     if (imagesLoaded) {
       preloadAdjacentImages();
     }
-  }, [photoIndex, imagesLoaded]);
+  }, [photoIndex, imagesLoaded, photos]);
 
   // Preload all lightbox images in advance
   const preloadLightboxImages = useCallback(() => {
@@ -71,7 +71,7 @@ const ImageGallery = () => {
       img.src = `https://res.cloudinary.com/dkf9qmqxa/image/upload/c_scale,w_1920,q_85/${photo.publicId}`;
     });
     setPreloadedLightbox(true);
-  }, []);
+  }, [photos]);
 
   // Start preloading when user hovers over any image
   const handleImageHover = useCallback(() => {

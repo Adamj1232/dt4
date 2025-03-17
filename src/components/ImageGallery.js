@@ -16,11 +16,11 @@ const ImageGallery = () => {
   const [preloadedLightbox, setPreloadedLightbox] = useState(false);
 
   const photos = useMemo(() => [
-    { id: "photo9", publicId: "dtf/1.jpg" },
+    // { id: "photo9", publicId: "dtf/1.jpg" },
     { id: "photo2", publicId: "dtf/3.jpg" },
     { id: "photo3", publicId: "dtf/4.jpg" },
     { id: "photo4", publicId: "dtf/5.jpg" },
-    { id: "photo1", publicId: "dtf/2.jpg" },
+    // { id: "photo1", publicId: "dtf/2.jpg" },
     { id: "photo5", publicId: "dtf/6.jpg" },
     { id: "photo6", publicId: "dtf/7.jpg" },
     { id: "photo7", publicId: "dtf/8.jpg" },

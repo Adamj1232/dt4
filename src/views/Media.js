@@ -39,7 +39,7 @@ const Media = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
-        <iframe
+        {/* <iframe
           loading="lazy"
           className="music-videos"
           width="475"
@@ -49,7 +49,7 @@ const Media = () => {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-        />
+        /> */}
         <iframe
           loading="lazy"
           className="music-videos"

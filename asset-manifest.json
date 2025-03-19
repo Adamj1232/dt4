@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.d06cab05.css",
-    "main.js": "/static/js/main.f9c31c18.js",
+    "main.css": "/static/css/main.32771c5c.css",
+    "main.js": "/static/js/main.bcc539f7.js",
     "static/js/844.3b44f8df.chunk.js": "/static/js/844.3b44f8df.chunk.js",
     "static/js/398.b0940bf3.chunk.js": "/static/js/398.b0940bf3.chunk.js",
     "static/js/737.4fafe71f.chunk.js": "/static/js/737.4fafe71f.chunk.js",
+    "static/js/185.3c615bc3.chunk.js": "/static/js/185.3c615bc3.chunk.js",
     "static/js/522.bf94e9d7.chunk.js": "/static/js/522.bf94e9d7.chunk.js",
+    "static/js/88.7146dfb4.chunk.js": "/static/js/88.7146dfb4.chunk.js",
     "static/media/WinterDTF-Clean_no_bg_compressed.webp": "/static/media/WinterDTF-Clean_no_bg_compressed.d99c9553b676e53dd990.webp",
     "static/media/DT4_logo_initials.webp": "/static/media/DT4_logo_initials.56a26bbe7727f69a591f.webp",
     "index.html": "/index.html",
@@ -19,7 +21,7 @@
     "static/media/applemusicwhite.svg": "/static/media/applemusicwhite.fa6122fa1d58f221fe4086b118b97b37.svg"
   },
   "entrypoints": [
-    "static/css/main.d06cab05.css",
-    "static/js/main.f9c31c18.js"
+    "static/css/main.32771c5c.css",
+    "static/js/main.bcc539f7.js"
   ]
 }

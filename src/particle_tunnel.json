@@ -33,7 +33,7 @@
     "events": {
       "onClick": {
         "enable": false,
-        "mode": []
+        "mode": ["repulse"]
       },
       "onDiv": {
         "selectors": [],
@@ -43,10 +43,10 @@
       },
       "onHover": {
         "enable": false,
-        "mode": [],
+        "mode": ["repulse"],
         "parallax": {
-          "enable": false,
-          "force": 2,
+          "enable": true,
+          "force": 1,
           "smooth": 10
         }
       },

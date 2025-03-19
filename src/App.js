@@ -8,7 +8,6 @@ import { ReactComponent as Email } from "./images/mail.svg";
 import { ReactComponent as SpotifyIcon } from "./images/spotifywhite.svg";
 import { ReactComponent as AppleMusicIcon } from "./images/applemusicwhite.svg";
 import { ReactComponent as YouTubeIcon } from "./images/youtubewhite.svg";
-
 import ParticleBackground from "./components/ParticleBackground";
 import MainMenu from "./components/MainMenu";
 import useViewport from "./hooks/useViewport";

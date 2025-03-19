@@ -19,11 +19,12 @@
     "yet-another-react-lightbox": "^3.21.7"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "GENERATE_SOURCEMAP=false NODE_ENV=production craco build",
+    "build:prod": "GENERATE_SOURCEMAP=false NODE_ENV=production craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:prod",
     "deploy": "gh-pages -d build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
     "compression-webpack-plugin": "^10.0.0",
     "gh-pages": "^6.0.0",
     "prettier": "^3.2.5",

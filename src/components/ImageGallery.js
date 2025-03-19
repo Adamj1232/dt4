@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import { Blurhash } from "react-blurhash";
-import Lightbox from 'yet-another-react-lightbox';
 import Download from "yet-another-react-lightbox/plugins/download";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import 'yet-another-react-lightbox/styles.css';
 import './ImageGallery.css';
+
+const Lightbox = lazy(() => import('yet-another-react-lightbox'));
 
 const ImageGallery = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -177,35 +178,37 @@ const ImageGallery = () => {
 
       {isOpen && (
         <div onClick={handleLightboxClick}>
-          <Lightbox
-            open={isOpen}
-            close={() => setIsOpen(false)}
-            index={photoIndex}
-            slides={slides}
-            plugins={[Download, Thumbnails]}
-            carousel={{
-              spacing: 0,
-              padding: 0,
-              preload: 3,
-            }}
-            thumbnails={{
-              position: "bottom",
-              width: 120,
-              height: 80,
-            }}
-            download={{
-              downloadText: "Download",
-              download: true,
-            }}
-            render={{
-              buttonPrev: isFirst => (isFirst ? null : undefined),
-              buttonNext: isLast => (isLast ? null : undefined),
-              iconDownload: () => <span title="Download">⬇️</span>,
-            }}
-            on={{
-              click: (e) => e.stopPropagation(),
-            }}
-          />
+          <Suspense fallback={<div className="lightbox-loading">Loading...</div>}>
+            <Lightbox
+              open={isOpen}
+              close={() => setIsOpen(false)}
+              index={photoIndex}
+              slides={slides}
+              plugins={[Download, Thumbnails]}
+              carousel={{
+                spacing: 0,
+                padding: 0,
+                preload: 3,
+              }}
+              thumbnails={{
+                position: "bottom",
+                width: 120,
+                height: 80,
+              }}
+              download={{
+                downloadText: "Download",
+                download: true,
+              }}
+              render={{
+                buttonPrev: isFirst => (isFirst ? null : undefined),
+                buttonNext: isLast => (isLast ? null : undefined),
+                iconDownload: () => <span title="Download">⬇️</span>,
+              }}
+              on={{
+                click: (e) => e.stopPropagation(),
+              }}
+            />
+          </Suspense>
         </div>
       )}
     </div>

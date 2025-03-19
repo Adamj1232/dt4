@@ -16,6 +16,7 @@ import OptimizedImage from "./components/OptimizedImage";
 import SEOHead from "./components/SEOHead";
 import { CloudinaryContext } from "cloudinary-react";
 import ImageGallery from "./components/ImageGallery";
+import SmoothScroll from "./components/SmoothScroll";
 
 // Lazy load all major components
 const LazyLoadedShows = lazy(() => import("./views/Shows.js"));
@@ -48,7 +49,7 @@ function App() {
   }
 
   return (
-    <>
+    <SmoothScroll>
       <SEOHead />
       <div>
         <div className="sneaky-background" />
@@ -189,7 +190,7 @@ function App() {
           </div>
         </section>
       </div>
-    </>
+    </SmoothScroll>
   );
 }
 

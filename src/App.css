@@ -46,16 +46,6 @@
   top: 0;
 }
 
-/* .sneaky-background {
-  background-image: url("images/WinterDTF-Clean_no_bg_compressed.webp");
-  background-position: 50% 35%;
-  background-repeat: no-repeat;
-  background-size: 95%;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-} */
-
 .spotlight {
   position: absolute;
   height: 100%;
@@ -397,7 +387,6 @@ iframe.music-videos {
   }
   .card-logo {
     width: 100vw;
-    /* margin: 184px 0; */
     height: unset;
     animation: zoomIn 8s;
   }

@@ -7,8 +7,8 @@ export default function SEOHead() {
     <Helmet>
       {/* Basic Meta Tags */}
       <html lang="en" />
-      <title>Dealer Takes Four - High-Energy Rock Band from Denver, Colorado</title>
-      <meta name="description" content="Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies. Book us for your next event!" />
+      <title>Dealer Takes Four (DT4) - Rock Band from Denver, Colorado</title>
+      <meta name="description" content="Experience the greatest American rock n' roll story with Dealer Takes Four (DT4). A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies. Book us for your next event!" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta name="theme-color" content="#0c0c0c" />
       <meta name="robots" content="index, follow" />
@@ -17,11 +17,11 @@ export default function SEOHead() {
       <meta name="geo.placename" content="Denver" />
       
       {/* Keywords */}
-      <meta name="keywords" content="Dealer Takes Four, Denver Rock Band, Live Music Colorado, Rock and Roll, Country Rock, Americana Music, Live Entertainment Denver, James and the Devil, Colorado Music" />
+      <meta name="keywords" content="Dealer Takes Four, Dealer takes 4, DT4, DTF band, Denver Rock Band, Live Music Colorado, Rock and Roll, Country Rock, Americana Music, Live Entertainment Denver, James and the Devil, Colorado Music" />
       
       {/* Open Graph tags */}
-      <meta property="og:title" content="Dealer Takes Four - High-Energy Rock Band from Denver" />
-      <meta property="og:description" content="Experience the unique sound of Dealer Takes Four - a powerful blend of rock, country, and Americana music from Denver, Colorado. Book us for your next event!" />
+      <meta property="og:title" content="Dealer Takes Four (DT4) - High-Energy Rock Band from Denver" />
+      <meta property="og:description" content="Experience the unique sound of Dealer Takes Four (DT4 / Dealer takes 4) - a powerful blend of rock, country, and Americana music from Denver, Colorado. Book us for your next event!" />
       <meta property="og:image" content={`${baseUrl}/images/WinterDTF-Clean_no_bg_compressed.webp`} />
       <meta property="og:image:alt" content="Dealer Takes Four band photo" />
       <meta property="og:url" content={baseUrl} />
@@ -31,8 +31,8 @@ export default function SEOHead() {
       
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Dealer Takes Four - Denver Rock Band" />
-      <meta name="twitter:description" content="Experience the unique sound of Dealer Takes Four - a powerful blend of rock, country, and Americana music from Denver, Colorado." />
+      <meta name="twitter:title" content="Dealer Takes Four (DT4) - Denver Rock Band" />
+      <meta name="twitter:description" content="Experience the unique sound of Dealer Takes Four (DT4 / Dealer takes 4) - a powerful blend of rock, country, and Americana music from Denver, Colorado." />
       <meta name="twitter:image" content={`${baseUrl}/images/WinterDTF-Clean_no_bg_compressed.webp`} />
       <meta name="twitter:image:alt" content="Dealer Takes Four band photo" />
       
@@ -58,10 +58,11 @@ export default function SEOHead() {
           "@context": "http://schema.org",
           "@type": "MusicGroup",
           "name": "Dealer Takes Four",
+          "alternateName": ["Dealer takes 4", "DT4", "DTF band"],
           "url": baseUrl,
           "logo": `${baseUrl}/images/DT4_logo_initials.webp`,
           "image": `${baseUrl}/images/WinterDTF-Clean_no_bg_compressed.webp`,
-          "description": "Experience the greatest American rock n' roll story with Dealer Takes Four. A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies.",
+          "description": "Experience the greatest American rock n' roll story with Dealer Takes Four (DT4). A unique blend of rock, country, and Americana featuring blazing fiddle, trumpet, and guitar harmonies.",
           "genre": ["Rock", "Country Rock", "Americana"],
           "foundingLocation": {
             "@type": "Place",

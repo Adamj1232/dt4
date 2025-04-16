@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.49f1ab85.css",
-    "main.js": "/static/js/main.2276d90b.js",
-    "static/js/844.3b44f8df.chunk.js": "/static/js/844.3b44f8df.chunk.js",
-    "static/js/398.b0940bf3.chunk.js": "/static/js/398.b0940bf3.chunk.js",
-    "static/js/737.4fafe71f.chunk.js": "/static/js/737.4fafe71f.chunk.js",
-    "static/js/522.bf94e9d7.chunk.js": "/static/js/522.bf94e9d7.chunk.js",
+    "main.css": "/static/css/main.c372bad8.css",
+    "main.js": "/static/js/main.75ff39c9.js",
+    "static/js/102.93f6b103.chunk.js": "/static/js/102.93f6b103.chunk.js",
+    "static/js/458.d517657b.chunk.js": "/static/js/458.d517657b.chunk.js",
+    "static/js/872.a4dc6e6b.chunk.js": "/static/js/872.a4dc6e6b.chunk.js",
+    "static/js/685.db302da1.chunk.js": "/static/js/685.db302da1.chunk.js",
     "static/media/WinterDTF-Clean_no_bg_compressed.webp": "/static/media/WinterDTF-Clean_no_bg_compressed.d99c9553b676e53dd990.webp",
     "static/media/DT4_logo_initials.webp": "/static/media/DT4_logo_initials.56a26bbe7727f69a591f.webp",
     "index.html": "/index.html",
@@ -19,7 +19,7 @@
     "static/media/applemusicwhite.svg": "/static/media/applemusicwhite.fa6122fa1d58f221fe4086b118b97b37.svg"
   },
   "entrypoints": [
-    "static/css/main.49f1ab85.css",
-    "static/js/main.2276d90b.js"
+    "static/css/main.c372bad8.css",
+    "static/js/main.75ff39c9.js"
   ]
 }

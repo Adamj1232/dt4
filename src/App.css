@@ -380,7 +380,7 @@ iframe.music-videos {
   width: 100vw;
   height: 100vh;
   height: unset;
-  animation: zoomIn 6s ease-out forwards;
+  animation: zoomIn 8s ease-out forwards;
 }
 
 .logo-container {
@@ -399,7 +399,7 @@ iframe.music-videos {
   .card-logo {
     width: 100vw;
     height: unset;
-    animation: zoomIn 4s ease-out forwards;
+    animation: zoomIn 8s ease-out forwards;
   }
   .logo-container {
     right: 0;

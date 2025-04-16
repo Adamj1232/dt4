@@ -376,20 +376,11 @@ iframe.music-videos {
   }
 }
 
-@keyframes subtleBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
 .card-logo {
   width: 100vw;
   height: 100vh;
   height: unset;
-  animation: zoomIn 8s, subtleBounce 4s ease-in-out infinite;
+  animation: zoomIn 6s ease-out forwards;
 }
 
 .logo-container {
@@ -398,24 +389,17 @@ iframe.music-videos {
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 
 @media screen and (max-width: 500px) {
   .sneaky-background {
     display: none;
   }
-  @keyframes zoomIn {
-    0% {
-      transform: scale(0.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
   .card-logo {
     width: 100vw;
     height: unset;
-    animation: zoomIn 8s, subtleBounce 3s ease-in-out infinite;
+    animation: zoomIn 4s ease-out forwards;
   }
   .logo-container {
     right: 0;
@@ -546,6 +530,10 @@ iframe.music-videos {
   #music {
     background-position: center center;
     background-attachment: scroll;
-    height: 40vh; /* Shorter height for mobile */
+    height: 40vh;
+  }
+
+  .parallax-scrolling {
+    background-attachment: scroll;
   }
 }

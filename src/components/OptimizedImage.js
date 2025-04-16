@@ -1,30 +1,23 @@
-import { useState, useEffect } from 'react'
-
+/*
+ Simplifies the OptimizedImage component to rely on native browser lazy loading
+ and decoding attributes, removing JS-based loading state management.
+*/
 export default function OptimizedImage({ src, alt, className, width, height }) {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+  // Removed useState and useEffect for manual loading/error handling
 
-  useEffect(() => {
-    const img = new Image()
-    img.src = src
-    img.onload = () => setLoading(false)
-    img.onerror = () => setError(true)
-  }, [src])
-
-  if (error) return <div className="image-error">Failed to load image</div>
+  // Removed error handling div, native loading doesn't provide simple error fallback here
+  // Consider adding a CSS-based fallback or error style if needed
 
   return (
-    <>
-      {loading && <div className="image-placeholder" style={{ width, height }} />}
-      <img
-        src={src}
-        alt={alt}
-        className={`${className} ${loading ? 'hidden' : ''}`}
-        width={width}
-        height={height}
-        loading="lazy"
-        decoding="async"
-      />
-    </>
-  )
+    <img
+      src={src}
+      alt={alt}
+      className={className} // Removed dynamic 'hidden' class based on loading state
+      width={width}
+      height={height}
+      loading="lazy" // Rely on native lazy loading
+      decoding="async" // Allow asynchronous decoding
+    />
+    // Removed placeholder div
+  );
 }

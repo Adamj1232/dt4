@@ -16,6 +16,7 @@ import SEOHead from './components/SEOHead'
 import { CloudinaryContext } from 'cloudinary-react'
 import ImageGallery from './components/ImageGallery'
 import SmoothScroll from './components/SmoothScroll'
+import ScrollAnimatedLogo from './components/ScrollAnimatedLogo'
 
 // Lazy load all major components
 const LazyLoadedShows = lazy(() => import('./views/Shows.js'))
@@ -33,14 +34,16 @@ function App() {
   }, [])
 
   const MainLogo = () => (
-    <OptimizedImage
-      src={width < 800 ? CardPng : LogoPng}
-      alt="Dealer Takes Four logo"
-      className="card-logo"
-      width={width < 800 ? '200' : '400'}
-      height={width < 800 ? '100' : '200'}
-      loading="eager"
-    />
+    <ScrollAnimatedLogo>
+      <OptimizedImage
+        src={width < 800 ? CardPng : LogoPng}
+        alt="Dealer Takes Four logo"
+        className="card-logo"
+        width={width < 800 ? '200' : '400'}
+        height={width < 800 ? '100' : '200'}
+        loading="eager"
+      />
+    </ScrollAnimatedLogo>
   )
 
   if (isLoading) {

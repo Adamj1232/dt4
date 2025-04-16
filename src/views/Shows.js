@@ -39,7 +39,7 @@ const Shows = () => {
   return (
     <>
       <EventStructuredData events={events} />
-      <h2 id="tour-title">Tour</h2>
+      <h2 id="tour-title">TOUR</h2>
       <div id="tour-date-container">
         <BandsInTownWidget artistId={bandsInTownArtistId} />
       </div>

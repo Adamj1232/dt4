@@ -65,7 +65,7 @@ function App() {
         </div>
 
         <section className="parallax-scrolling" id="bio">
-          <h2 id="bio-title">Bio</h2>
+          <h2 id="bio-title">BIO</h2>
           <p className="bio-text">
             Experience the greatest American rock n' roll story ever told when Dealer Takes Four
             takes the stage. Bound by a love of rock music and the Rocky Mountains, this group of
@@ -121,7 +121,7 @@ function App() {
         </Suspense>
 
         <section className="parallax-scrolling" id="contact">
-          <h2 id="contact-title">Contact</h2>
+          <h2 id="contact-title">CONTACT</h2>
           <p className="contact-text">
             For booking inquiries, comments, or tickets, contact
             <a className="contact-links" href="mailto:music@dealertakesfour.com">

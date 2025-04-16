@@ -9,16 +9,16 @@ export default function MainMenu() {
     <section id="header">
       <nav id="main-menu">
         <a className="menu-links" href="#tour">
-          tour
+          TOUR
         </a>
         <a className="menu-links" href="#music">
-          music
+          MUSIC
         </a>
         <a className="menu-links" href="#bio">
-          bio
+          BIO
         </a>
         <a className="menu-links" href="#contact">
-          contact
+          CONTACT
         </a>
 
         <div id="main-menu-social">

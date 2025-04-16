@@ -1,4 +1,5 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import './App.css'
 import CardPng from './images/DT4_logo_initials.webp'
 import LogoPng from './images/WinterDTF-Clean_no_bg_compressed.webp'
@@ -23,13 +24,24 @@ const LazyLoadedShows = lazy(() => import('./views/Shows.js'))
 const LazyLoadedMusicPlayer = lazy(() => import('./views/MusicPlayer.js'))
 const LazyLoadedMedia = lazy(() => import('./views/Media.js'))
 
+// Basic Skeleton Loader Component
+const SkeletonLoader = () => (
+  <div className="section-loader">
+    <div className="skeleton-block skeleton"></div>
+    <div style={{ width: '90%' }}>
+        <div className="skeleton-line skeleton"></div>
+        <div className="skeleton-line skeleton" style={{width: '60%'}}></div>
+    </div>
+  </div>
+);
+
 function App() {
   const { width } = useViewport()
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Add loading state management
-    const timer = setTimeout(() => setIsLoading(false), 100)
+    // Simulate loading time (adjust as needed)
+    const timer = setTimeout(() => setIsLoading(false), 500) // Increased delay slightly for spinner visibility
     return () => clearTimeout(timer)
   }, [])
 
@@ -47,8 +59,23 @@ function App() {
   )
 
   if (isLoading) {
-    return <div className="loading-screen">Loading...</div>
+    // Use the new CSS spinner for initial load
+    return (
+      <div className="loading-screen">
+        <div className="spinner"></div>
+      </div>
+    );
   }
+
+  // Animation variants for lazy loaded sections
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
 
   return (
     <SmoothScroll>
@@ -68,7 +95,7 @@ function App() {
         </div>
 
         <section className="parallax-scrolling" id="bio">
-          <h2 id="bio-title">BIO</h2>
+          <h2 className="section-title">BIO</h2>
           <p className="bio-text">
             Experience the greatest American rock n' roll story ever told when Dealer Takes Four
             takes the stage. Bound by a love of rock music and the Rocky Mountains, this group of
@@ -108,23 +135,44 @@ function App() {
             <ImageGallery />
           </Suspense>
         </CloudinaryContext>
-        {/* Lazy loaded sections */}
-        <Suspense fallback={<div className="section-loader">Loading...</div>}>
-          <section className="parallax-scrolling" id="tour">
+
+        <Suspense fallback={<SkeletonLoader />}>
+          <motion.section
+            className="parallax-scrolling"
+            id="tour"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
             <LazyLoadedShows />
-          </section>
+          </motion.section>
 
-          <section className="parallax-scrolling" id="music">
+          <motion.section
+            className="parallax-scrolling"
+            id="music"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
             <LazyLoadedMusicPlayer />
-          </section>
+          </motion.section>
 
-          <section className="parallax-scrolling" id="videos">
+          <motion.section
+            className="parallax-scrolling"
+            id="videos"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
             <LazyLoadedMedia />
-          </section>
+          </motion.section>
         </Suspense>
 
-        <section className="parallax-scrolling" id="contact">
-          <h2 id="contact-title">CONTACT</h2>
+        <section className="parallax-scrolling contact-section" id="contact">
+          <h2 className="section-title">CONTACT</h2>
           <p className="contact-text">
             For booking inquiries, comments, or tickets, contact
             <a className="contact-links" href="mailto:music@dealertakesfour.com">
@@ -132,7 +180,7 @@ function App() {
               Music@DealerTakesFour.com
             </a>
           </p>
-          <div id="social-icon-container">
+          <div className="social-icon-container">
             <a
               className="contact-links"
               href="https://www.facebook.com/DealerTakesFour/"

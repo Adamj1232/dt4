@@ -42,11 +42,11 @@
         "type": "circle"
       },
       "onHover": {
-        "enable": false,
+        "enable": true,
         "mode": ["repulse"],
         "parallax": {
-          "enable": true,
-          "force": 1,
+          "enable": false,
+          "force": 0.5,
           "smooth": 10
         }
       },
@@ -102,11 +102,11 @@
         "quantity": 2
       },
       "repulse": {
-        "distance": 200,
+        "distance": 120,
         "duration": 0.4,
-        "factor": 100,
+        "factor": 80,
         "speed": 1,
-        "maxSpeed": 50,
+        "maxSpeed": 20,
         "easing": "ease-out-quad",
         "divs": {
           "distance": 200,

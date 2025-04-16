@@ -145,7 +145,7 @@ export default function SEOHead() {
             description: 'Live performances by Dealer Takes Four',
             offers: {
               '@type': 'Offer',
-              url: 'mailto:DealerTakes4@gmail.com',
+              url: 'mailto:music@dealertakesfour.com',
               availability: 'https://schema.org/InStock'
             }
           },
@@ -153,7 +153,7 @@ export default function SEOHead() {
             '@type': 'BookAction',
             target: {
               '@type': 'EntryPoint',
-              urlTemplate: 'mailto:DealerTakes4@gmail.com',
+              urlTemplate: 'mailto:music@dealertakesfour.com',
               inLanguage: 'en-US',
               actionPlatform: [
                 'http://schema.org/DesktopWebPlatform',

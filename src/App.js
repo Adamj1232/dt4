@@ -124,9 +124,9 @@ function App() {
           <h2 id="contact-title">Contact</h2>
           <p className="contact-text">
             For booking inquiries, comments, or tickets, contact
-            <a className="contact-links" href="mailto:DealerTakes4@gmail.com">
+            <a className="contact-links" href="mailto:music@dealertakesfour.com">
               {' '}
-              DealerTakes4@gmail.com
+              Music@DealerTakesFour.com
             </a>
           </p>
           <div id="social-icon-container">
@@ -178,7 +178,7 @@ function App() {
               <YouTubeIcon className="social-icon" />
             </a>
 
-            <a className="contact-links" href="mailto:dealertakes4@gmail.com">
+            <a className="contact-links" href="mailto:music@dealertakesfour.com">
               <Email className="social-icon" />
             </a>
           </div>

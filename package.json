@@ -19,7 +19,7 @@
     "yet-another-react-lightbox": "^3.21.7"
   },
   "scripts": {
-    "dev": "craco start",
+    "dev": "BROWSER=none craco start",
     "start": "craco start",
     "build": "GENERATE_SOURCEMAP=false NODE_ENV=production craco build",
     "build:prod": "GENERATE_SOURCEMAP=false NODE_ENV=production craco build",

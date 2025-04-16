@@ -102,7 +102,7 @@
         "quantity": 2
       },
       "repulse": {
-        "distance": 120,
+        "distance": 80,
         "duration": 0.4,
         "factor": 80,
         "speed": 1,

@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.83ab9f4d.css",
-    "main.js": "/static/js/main.6dbaa2be.js",
-    "static/js/102.93f6b103.chunk.js": "/static/js/102.93f6b103.chunk.js",
+    "main.js": "/static/js/main.40adbfae.js",
+    "static/js/102.7ab768f9.chunk.js": "/static/js/102.7ab768f9.chunk.js",
     "static/js/458.d517657b.chunk.js": "/static/js/458.d517657b.chunk.js",
-    "static/js/872.a4dc6e6b.chunk.js": "/static/js/872.a4dc6e6b.chunk.js",
+    "static/js/872.21da8b1a.chunk.js": "/static/js/872.21da8b1a.chunk.js",
     "static/js/685.db302da1.chunk.js": "/static/js/685.db302da1.chunk.js",
     "static/media/WinterDTF-Clean_no_bg_compressed.webp": "/static/media/WinterDTF-Clean_no_bg_compressed.d99c9553b676e53dd990.webp",
     "static/media/DT4_logo_initials.webp": "/static/media/DT4_logo_initials.56a26bbe7727f69a591f.webp",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.83ab9f4d.css",
-    "static/js/main.6dbaa2be.js"
+    "static/js/main.40adbfae.js"
   ]
 }

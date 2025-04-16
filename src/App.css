@@ -50,11 +50,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: radial-gradient(
-    circle,
-    transparent 0px,
-    rgba(0, 0, 0, 0.95) 1px
-  );
+  background-image: radial-gradient(circle, transparent 0px, rgba(0, 0, 0, 0.95) 1px);
 }
 
 .particle-canvas {
@@ -74,7 +70,7 @@ body {
 
 body {
   background-color: #0c0c0c;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h2 {
@@ -192,7 +188,7 @@ a {
 
 .bio-text {
   color: #ffffff;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 200;
   line-height: 1.75;
   margin: 0 5%;
@@ -201,7 +197,7 @@ a {
 
 #lets-rage {
   color: #ffffff;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 20px;
   font-weight: 200;
   line-height: 1.75;
@@ -211,7 +207,7 @@ a {
 }
 
 #music {
-  background-image: url("https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg");
+  background-image: url('https://res.cloudinary.com/dkf9qmqxa/image/upload/q_auto:eco/v1705945336/AJ8A1852_uvau2o.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -253,7 +249,7 @@ a {
 
 .music-links {
   color: #ffffff;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 900;
   font-size: 26px;
   text-decoration: none;
@@ -365,6 +361,13 @@ iframe.music-videos {
   /* margin: 184px 0; */
   height: unset;
   animation: zoomIn 8s;
+  transition:
+    transform 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
+}
+.card-logo:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
 }
 .logo-container {
   right: 0;
@@ -494,7 +497,6 @@ iframe.music-videos {
     top: calc(50vh - 109px);
     left: calc(50vw - 150px);
   }
-
 }
 
 @media screen and (min-width: 1300px) {

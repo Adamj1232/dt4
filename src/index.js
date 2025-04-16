@@ -1,12 +1,12 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { HelmetProvider } from 'react-helmet-async'
+import './index.css'
+import App from './App'
+import * as serviceWorker from './serviceWorker'
+import reportWebVitals from './reportWebVitals'
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'))
 
 root.render(
   <React.StrictMode>
@@ -14,28 +14,28 @@ root.render(
       <App />
     </HelmetProvider>
   </React.StrictMode>
-);
+)
 
 // Register service worker for offline capabilities
 serviceWorker.register({
   onUpdate: registration => {
-    const waitingServiceWorker = registration.waiting;
+    const waitingServiceWorker = registration.waiting
 
     if (waitingServiceWorker) {
-      waitingServiceWorker.addEventListener("statechange", event => {
-        if (event.target.state === "activated") {
-          window.location.reload();
+      waitingServiceWorker.addEventListener('statechange', event => {
+        if (event.target.state === 'activated') {
+          window.location.reload()
         }
-      });
-      waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
+      })
+      waitingServiceWorker.postMessage({ type: 'SKIP_WAITING' })
     }
   }
-});
+})
 
 // Report web vitals only in production
 if (process.env.NODE_ENV === 'production') {
   reportWebVitals(metric => {
     // Send to analytics
-    console.log(metric);
-  });
+    console.log(metric)
+  })
 }

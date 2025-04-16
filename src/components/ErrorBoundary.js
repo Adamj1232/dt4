@@ -1,25 +1,25 @@
-import React from 'react';
+import React from 'react'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null, errorInfo: null };
+    super(props)
+    this.state = { hasError: false, error: null, errorInfo: null }
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true };
+    return { hasError: true }
   }
 
   componentDidCatch(error, errorInfo) {
     this.setState({
       error: error,
       errorInfo: errorInfo
-    });
-    
+    })
+
     // Log error to an error reporting service
     if (process.env.NODE_ENV === 'production') {
-      console.error('Error:', error);
-      console.error('Error Info:', errorInfo);
+      console.error('Error:', error)
+      console.error('Error Info:', errorInfo)
     }
   }
 
@@ -37,7 +37,7 @@ class ErrorBoundary extends React.Component {
           )}
           <button
             onClick={() => {
-              window.location.reload();
+              window.location.reload()
             }}
             style={{
               padding: '10px 20px',
@@ -52,11 +52,11 @@ class ErrorBoundary extends React.Component {
             Reload Page
           </button>
         </div>
-      );
+      )
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }
 
-export default ErrorBoundary; 
+export default ErrorBoundary

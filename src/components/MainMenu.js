@@ -1,8 +1,8 @@
-import { ReactComponent as Fb } from "../images/facebookwhite.svg";
-import { ReactComponent as Ig } from "../images/instagramwhite.svg";
-import { ReactComponent as Spotify } from "../images/spotifywhite.svg";
-import { ReactComponent as AppleMusic } from "../images/applemusicwhite.svg";
-import { ReactComponent as YouTube } from "../images/youtubewhite.svg";
+import { ReactComponent as Fb } from '../images/facebookwhite.svg'
+import { ReactComponent as Ig } from '../images/instagramwhite.svg'
+import { ReactComponent as Spotify } from '../images/spotifywhite.svg'
+import { ReactComponent as AppleMusic } from '../images/applemusicwhite.svg'
+import { ReactComponent as YouTube } from '../images/youtubewhite.svg'
 
 export default function MainMenu() {
   return (
@@ -70,5 +70,5 @@ export default function MainMenu() {
         </div>
       </nav>
     </section>
-  );
+  )
 }

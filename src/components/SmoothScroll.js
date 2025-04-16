@@ -1,29 +1,29 @@
-import { useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { useEffect } from 'react'
+import { motion, useScroll, useSpring } from 'framer-motion'
 
 export default function SmoothScroll({ children }) {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
-  });
+  })
 
   useEffect(() => {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        e.preventDefault()
+        const target = document.querySelector(this.getAttribute('href'))
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
-          });
+          })
         }
-      });
-    });
-  }, []);
+      })
+    })
+  }, [])
 
   return (
     <>
@@ -33,5 +33,5 @@ export default function SmoothScroll({ children }) {
       />
       {children}
     </>
-  );
-} 
+  )
+}

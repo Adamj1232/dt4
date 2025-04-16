@@ -536,7 +536,7 @@
   "style": {},
   "themes": [],
   "zLayers": 100,
- 
+
   "polygon": {
     "draw": {
       "enable": true,
@@ -559,7 +559,7 @@
     "inline": {
       "arrangement": "equidistant"
     },
-        "scale": 4,
+    "scale": 4,
     "type": "inline",
     "data": "<svg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 305 124' width='100vw'><style></style><path fill-rule='evenodd' d='m9.9 94.5h11.1v-68.1h-11.1v-20.7h47.5c26.4 0 45.4 16 45.4 54.7 0 38.6-17.5 56.4-44.1 56.4h-48.8zm49.2 0c15.8 0 19.9-10.8 19.9-34.1 0-23-5.3-34-21.1-34h-15v68.1zm52.2-88.8h93.4v43.2h-14.6v-22.5h-21.2v68.3h14v22.3h-49.5v-22.3h13.7v-68.3h-21.2v22.5h-14.6zm101.9 88.9h11v-68.3h-11v-20.6h82.8v43.1h-14.6v-22.5h-35.2v23.2h24.1v20.7h-24.1v24.4h11.4v22.3h-44.4z'/></svg>"
   },

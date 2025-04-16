@@ -1,4 +1,4 @@
-const CompressionPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   webpack: {
@@ -11,9 +11,9 @@ module.exports = {
             threshold: 10240,
             minRatio: 0.8
           })
-        );
+        )
       }
-      return webpackConfig;
+      return webpackConfig
     }
   }
-}; 
+}

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Media = () => {
-  console.log("media");
+  console.log('media')
   return (
     <div className="media">
       <h2 id="music-title">Videos</h2>
@@ -63,7 +63,7 @@ const Media = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Media;
+export default Media

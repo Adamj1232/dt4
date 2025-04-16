@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 export default function OptimizedImage({ src, alt, className, width, height }) {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => setLoading(false);
-    img.onerror = () => setError(true);
-  }, [src]);
+    const img = new Image()
+    img.src = src
+    img.onload = () => setLoading(false)
+    img.onerror = () => setError(true)
+  }, [src])
 
-  if (error) return <div className="image-error">Failed to load image</div>;
-  
+  if (error) return <div className="image-error">Failed to load image</div>
+
   return (
     <>
       {loading && <div className="image-placeholder" style={{ width, height }} />}
@@ -26,5 +26,5 @@ export default function OptimizedImage({ src, alt, className, width, height }) {
         decoding="async"
       />
     </>
-  );
-} 
+  )
+}

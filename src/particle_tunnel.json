@@ -576,7 +576,6 @@
     "spawnColor": {
       "value": "#ff0000",
       "animation": {
-
         "l": {
           "count": 0,
           "enable": true,

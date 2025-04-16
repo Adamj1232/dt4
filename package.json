@@ -19,15 +19,16 @@
     "yet-another-react-lightbox": "^3.21.7"
   },
   "scripts": {
+    "dev": "craco start",
     "start": "craco start",
     "build": "GENERATE_SOURCEMAP=false NODE_ENV=production craco build",
     "build:prod": "GENERATE_SOURCEMAP=false NODE_ENV=production craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build:prod",
+    "predeploy": "yarn build:prod",
     "deploy": "gh-pages -d build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md,html}\""
   },
   "eslintConfig": {
     "extends": [

@@ -77,7 +77,7 @@ function App() {
             blazing fiddle, trumpet, and guitar harmonies layered on top of heavy drums, bass, and
             keys, DTF is on a mission to tell stories, inspire feelings, and make unforgettable
             memories together through rich and well-crafted songwriting. Dealer Takes Four is Brian
-            Knapp, Adam Carpenter, Dave Ross, Matt Stoner, Marcus Spitz, and Brent Hannibal.
+            Knapp, Adam Carpenter, Dave Ross, Kiel Dehnert, Marcus Spitz, and Brent Hannibal.
             <br />
             Dealer Takes Four is the second incarnation of a band that made waves throughout
             Colorado and the mid-west in the 2000's - 2010s named James and the Devil. They were

@@ -18,22 +18,16 @@ const ImageGallery = () => {
 
   const photos = useMemo(
     () => [
-      // { id: "photo9", publicId: "dtf/1.jpg" },
       { id: 'photo2', publicId: 'dtf/3.jpg' },
       { id: 'photo3', publicId: 'dtf/4.jpg' },
       { id: 'photo8', publicId: 'dtf/19.jpg' },
       { id: 'photo7', publicId: 'dtf/18.jpg' },
-      // { id: "photo1", publicId: "dtf/2.jpg" },
       { id: 'photo5', publicId: 'dtf/6.jpg' },
-      // { id: 'photo7', publicId: 'dtf/8.jpg' },
-      // { id: 'photo8', publicId: 'dtf/9.jpg' },
       { id: 'photo2', publicId: 'dtf/13.jpg' },
       { id: 'photo5', publicId: 'dtf/16.jpg' },
       { id: 'photo3', publicId: 'dtf/14.jpg' },
       { id: 'photo4', publicId: 'dtf/5.jpg' },
       { id: 'photo6', publicId: 'dtf/7.jpg' },
-
-      // { id: "photo1", publicId: "dtf/12.jpg" },
       { id: 'photo6', publicId: 'dtf/17.jpg' },
       { id: 'photo8', publicId: 'dtf/20.jpg' }
     ],

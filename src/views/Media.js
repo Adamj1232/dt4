@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Media = () => {
-  console.log('media')
   return (
     <div className="media">
       <h2 id="music-title">VIDEOS</h2>

@@ -8,12 +8,14 @@
   width: 100%;
   margin-bottom: 20px;
   cursor: pointer;
+  border: 0;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-height: 300px;
   background: #f0f0f0;
   position: relative;
+  padding: 0;
 }
 
 .main-image {
@@ -21,13 +23,17 @@
   height: 100%;
   object-fit: contain;
   display: block;
-  transition: transform 0.3s ease;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .main-image:hover {
   transform: scale(1.02);
+}
+
+.featured-image:focus-visible {
+  outline: 2px solid #ae2727;
+  outline-offset: 4px;
 }
 
 .main-image.loaded {
@@ -59,6 +65,7 @@
 }
 
 .thumbnail-card {
+  border: 0;
   flex: 0 0 auto;
   width: 80px;
   height: 60px;
@@ -68,15 +75,23 @@
   opacity: 0.7;
   transition: opacity 0.3s ease;
   background: #f0f0f0;
+  padding: 0;
 }
 
 .thumbnail-card.active {
   opacity: 1;
-  border: 2px solid #007bff;
+  outline: 2px solid #ae2727;
+  outline-offset: 2px;
 }
 
 .thumbnail-card:hover {
   opacity: 1;
+}
+
+.thumbnail-card:focus-visible {
+  opacity: 1;
+  outline: 2px solid #ae2727;
+  outline-offset: 3px;
 }
 
 .thumbnail-image {
@@ -174,5 +189,20 @@
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-image,
+  .blur-placeholder,
+  .thumbnail-card,
+  .skeleton-image,
+  .skeleton-thumbnail {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .main-image:hover {
+    transform: none;
   }
 }

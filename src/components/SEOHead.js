@@ -60,11 +60,6 @@ export default function SEOHead() {
       {/* Canonical URL */}
       <link rel="canonical" href={baseUrl} />
 
-      {/* Preload critical assets */}
-      <link rel="preload" href="/images/DT4_logo_initials.webp" as="image" fetchpriority="high" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
-
       {/* Favicons and PWA */}
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="apple-touch-icon" href="/images/DT4_logo_initials.webp" />

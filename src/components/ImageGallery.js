@@ -18,18 +18,18 @@ const ImageGallery = () => {
 
   const photos = useMemo(
     () => [
-      { id: 'photo2', publicId: 'dtf/3.jpg' },
-      { id: 'photo3', publicId: 'dtf/4.jpg' },
-      { id: 'photo8', publicId: 'dtf/19.jpg' },
-      { id: 'photo7', publicId: 'dtf/18.jpg' },
-      { id: 'photo5', publicId: 'dtf/6.jpg' },
-      { id: 'photo2', publicId: 'dtf/13.jpg' },
-      { id: 'photo5', publicId: 'dtf/16.jpg' },
-      { id: 'photo3', publicId: 'dtf/14.jpg' },
-      { id: 'photo4', publicId: 'dtf/5.jpg' },
-      { id: 'photo6', publicId: 'dtf/7.jpg' },
-      { id: 'photo6', publicId: 'dtf/17.jpg' },
-      { id: 'photo8', publicId: 'dtf/20.jpg' }
+      { id: 'photo2', publicId: 'dtf/3.jpg', alt: 'Dealer Takes Four performing live on stage' },
+      { id: 'photo3', publicId: 'dtf/4.jpg', alt: 'Dealer Takes Four band members playing live' },
+      { id: 'photo8', publicId: 'dtf/19.jpg', alt: 'Dealer Takes Four concert performance' },
+      { id: 'photo7', publicId: 'dtf/18.jpg', alt: 'Dealer Takes Four musicians under stage lights' },
+      { id: 'photo5', publicId: 'dtf/6.jpg', alt: 'Dealer Takes Four live show' },
+      { id: 'photo2', publicId: 'dtf/13.jpg', alt: 'Dealer Takes Four on stage in concert' },
+      { id: 'photo5', publicId: 'dtf/16.jpg', alt: 'Dealer Takes Four performing for a crowd' },
+      { id: 'photo3', publicId: 'dtf/14.jpg', alt: 'Dealer Takes Four live band performance' },
+      { id: 'photo4', publicId: 'dtf/5.jpg', alt: 'Dealer Takes Four musicians performing together' },
+      { id: 'photo6', publicId: 'dtf/7.jpg', alt: 'Dealer Takes Four concert photo' },
+      { id: 'photo6', publicId: 'dtf/17.jpg', alt: 'Dealer Takes Four stage performance' },
+      { id: 'photo8', publicId: 'dtf/20.jpg', alt: 'Dealer Takes Four live music performance' }
     ],
     []
   )
@@ -61,7 +61,7 @@ const ImageGallery = () => {
       const prevIndex = (photoIndex - 1 + photos.length) % photos.length
 
       ;[prevIndex, nextIndex].forEach(index => {
-        const img = new Image()
+        const img = new window.Image()
         img.src = `https://res.cloudinary.com/dkf9qmqxa/image/upload/c_scale,w_1600,q_80/${photos[index].publicId}`
       })
     }
@@ -74,7 +74,7 @@ const ImageGallery = () => {
   // Preload all lightbox images in advance
   const preloadLightboxImages = useCallback(() => {
     photos.forEach(photo => {
-      const img = new Image()
+      const img = new window.Image()
       img.src = `https://res.cloudinary.com/dkf9qmqxa/image/upload/c_scale,w_1920,q_85/${photo.publicId}`
     })
     setPreloadedLightbox(true)
@@ -120,9 +120,16 @@ const ImageGallery = () => {
     e.stopPropagation()
   }
 
+  const openLightbox = () => setIsOpen(true)
+
   return (
     <div className="image-gallery-container">
-      <div className="featured-image">
+      <button
+        className="featured-image"
+        type="button"
+        onClick={openLightbox}
+        aria-label={`Open photo: ${photos[photoIndex].alt}`}
+      >
         {!mainImageLoaded && photos[photoIndex].blurhash && (
           <div className="blur-placeholder">
             <Blurhash
@@ -138,9 +145,10 @@ const ImageGallery = () => {
         <Image
           cloudName="dkf9qmqxa"
           publicId={photos[photoIndex].publicId}
+          secure
+          alt={photos[photoIndex].alt}
           className={`main-image ${mainImageLoaded ? 'loaded' : ''}`}
           onLoad={() => setMainImageLoaded(true)}
-          onClick={() => setIsOpen(true)}
         >
           <Transformation
             width="1600"
@@ -152,18 +160,28 @@ const ImageGallery = () => {
             loading="eager"
           />
         </Image>
-      </div>
+      </button>
 
       {imagesLoaded && (
         <div className="thumbnail-container">
           {photos.map((photo, index) => (
-            <div
-              key={photo.id}
+            <button
+              key={photo.publicId}
+              type="button"
               className={`thumbnail-card ${index === photoIndex ? 'active' : ''}`}
               onClick={() => setPhotoIndex(index)}
               onMouseEnter={handleImageHover}
+              onFocus={handleImageHover}
+              aria-label={`Show photo: ${photo.alt}`}
+              aria-pressed={index === photoIndex}
             >
-              <Image cloudName="dkf9qmqxa" publicId={photo.publicId} className="thumbnail-image">
+              <Image
+                cloudName="dkf9qmqxa"
+                publicId={photo.publicId}
+                secure
+                alt={`Thumbnail: ${photo.alt}`}
+                className="thumbnail-image"
+              >
                 <Transformation
                   width="200"
                   height="200"
@@ -173,7 +191,7 @@ const ImageGallery = () => {
                   dpr="auto"
                 />
               </Image>
-            </div>
+            </button>
           ))}
         </div>
       )}

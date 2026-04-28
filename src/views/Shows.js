@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import BandsInTownWidget from '../components/BandsInTownWidget'
 import EventStructuredData from '../components/EventStructuredData'
 
@@ -6,10 +6,36 @@ const APP_ID = process.env.REACT_APP_BANDSINTOWN_APP_ID || '5643833ab6e08c056beb
 const bandsInTownArtistId = 'id_15581154'
 
 const Shows = () => {
+  const containerRef = useRef(null)
   const [events, setEvents] = useState([])
+  const [shouldLoadShows, setShouldLoadShows] = useState(false)
 
   useEffect(() => {
-    // Fetch events from Bandsintown API
+    if (shouldLoadShows || !containerRef.current) return undefined
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoadShows(true)
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadShows(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '600px 0px' }
+    )
+
+    observer.observe(containerRef.current)
+
+    return () => observer.disconnect()
+  }, [shouldLoadShows])
+
+  useEffect(() => {
+    if (!shouldLoadShows) return undefined
+
     const fetchEvents = async () => {
       try {
         const response = await fetch(
@@ -17,7 +43,6 @@ const Shows = () => {
         )
         const data = await response.json()
 
-        // Transform the data to match our schema
         const formattedEvents = data.map(event => ({
           name: 'Dealer Takes Four Live at ' + event.venue.name,
           startDate: event.datetime,
@@ -34,14 +59,21 @@ const Shows = () => {
     }
 
     fetchEvents()
-  }, [])
+    return undefined
+  }, [shouldLoadShows])
 
   return (
     <>
-      <EventStructuredData events={events} />
+      {shouldLoadShows && <EventStructuredData events={events} />}
       <h2 id="tour-title">TOUR</h2>
-      <div id="tour-date-container">
-        <BandsInTownWidget artistId={bandsInTownArtistId} />
+      <div id="tour-date-container" ref={containerRef}>
+        {shouldLoadShows ? (
+          <BandsInTownWidget artistId={bandsInTownArtistId} />
+        ) : (
+          <div className="tour-widget-placeholder" aria-live="polite">
+            Tour dates are loading.
+          </div>
+        )}
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useEffect } from 'react'
+import React, { Suspense, lazy } from 'react'
 import './App.css'
 import CardPng from './images/DT4_logo_initials.webp'
 import LogoPng from './images/WinterDTF-Clean_no_bg_compressed.webp'
@@ -25,13 +25,6 @@ const LazyLoadedMedia = lazy(() => import('./views/Media.js'))
 
 function App() {
   const { width } = useViewport()
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Add loading state management
-    const timer = setTimeout(() => setIsLoading(false), 100)
-    return () => clearTimeout(timer)
-  }, [])
 
   const MainLogo = () => (
     <ScrollAnimatedLogo>
@@ -39,16 +32,13 @@ function App() {
         src={width < 800 ? CardPng : LogoPng}
         alt="Dealer Takes Four logo"
         className="card-logo"
-        width={width < 800 ? '200' : '400'}
-        height={width < 800 ? '100' : '200'}
+        width={width < 800 ? 1265 : 3978}
+        height={width < 800 ? 1224 : 3007}
         loading="eager"
+        fetchPriority="high"
       />
     </ScrollAnimatedLogo>
   )
-
-  if (isLoading) {
-    return <div className="loading-screen">Loading...</div>
-  }
 
   return (
     <SmoothScroll>
@@ -92,7 +82,7 @@ function App() {
 
         <hr />
 
-        <CloudinaryContext cloudName="dkf9qmqxa">
+        <CloudinaryContext cloudName="dkf9qmqxa" secure>
           <Suspense
             fallback={
               <div className="loading-skeleton">
@@ -138,6 +128,7 @@ function App() {
               href="https://www.facebook.com/DealerTakesFour/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook"
             >
               <FbB className="social-icon" />
             </a>
@@ -147,6 +138,7 @@ function App() {
               href="https://www.instagram.com/dealertakesfour/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <IgB className="social-icon" />
             </a>
@@ -181,7 +173,11 @@ function App() {
               <YouTubeIcon className="social-icon" />
             </a>
 
-            <a className="contact-links" href="mailto:music@dealertakesfour.com">
+            <a
+              className="contact-links"
+              href="mailto:music@dealertakesfour.com"
+              aria-label="Email Dealer Takes Four"
+            >
               <Email className="social-icon" />
             </a>
           </div>

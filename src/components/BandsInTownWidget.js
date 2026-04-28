@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+
+const BANDSINTOWN_SCRIPT_SRC = 'https://widgetv3.bandsintown.com/main.min.js'
 
 const srOnlyStyle = {
   position: 'absolute',
@@ -35,97 +37,132 @@ const BandsInTownWidget = ({
     dateFormat: 'MMM. D, YYYY'
   }
 }) => {
+  const containerRef = useRef(null)
+  const [shouldLoadWidget, setShouldLoadWidget] = useState(false)
+
   useEffect(() => {
-    // Load the Bandsintown script dynamically
+    if (shouldLoadWidget || !containerRef.current) return undefined
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoadWidget(true)
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadWidget(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '400px 0px' }
+    )
+
+    observer.observe(containerRef.current)
+
+    return () => observer.disconnect()
+  }, [shouldLoadWidget])
+
+  useEffect(() => {
+    if (!shouldLoadWidget) return undefined
+    if (document.querySelector(`script[src="${BANDSINTOWN_SCRIPT_SRC}"]`)) {
+      return undefined
+    }
+
     const script = document.createElement('script')
-    script.src = 'https://widgetv3.bandsintown.com/main.min.js'
+    script.src = BANDSINTOWN_SCRIPT_SRC
     script.charset = 'utf-8'
     script.async = true
     document.body.appendChild(script)
 
-    return () => {
-      // Cleanup on unmount
-      document.body.removeChild(script)
-    }
-  }, [])
+    return undefined
+  }, [shouldLoadWidget])
 
   return (
-    <a
-      className="bit-widget-initializer"
-      href={`https://www.bandsintown.com/${encodeURIComponent(artistId)}`}
-      data-artist-name={artistId}
-      data-background-color={theme.backgroundColor}
-      data-separator-color={theme.separatorColor}
-      data-text-color={theme.textColor}
-      data-auto-style="true"
-      data-button-label-capitalization="uppercase"
-      data-header-capitalization="uppercase"
-      data-location-capitalization="uppercase"
-      data-venue-capitalization="uppercase"
-      data-display-local-dates="true"
-      data-local-dates-position="tab"
-      data-display-past-dates="true"
-      data-display-details="false"
-      data-display-lineup="false"
-      data-display-start-time="false"
-      data-social-share-icon="true"
-      data-display-limit="all"
-      data-date-format="MMM. D, YYYY"
-      data-date-orientation="horizontal"
-      data-date-border-color="#4A4A4A"
-      data-date-border-width="1px"
-      data-date-capitalization="capitalize"
-      data-date-border-radius="10px"
-      data-event-ticket-cta-size="medium"
-      data-event-custom-ticket-text=""
-      data-event-ticket-text="TICKETS"
-      data-event-ticket-icon="false"
-      data-event-ticket-cta-text-color="rgba(255,255,255,1)"
-      data-event-ticket-cta-bg-color="rgba(74,74,74,1)"
-      data-event-ticket-cta-border-color="rgba(74,74,74,1)"
-      data-event-ticket-cta-border-width="0px"
-      data-event-ticket-cta-border-radius="2px"
-      data-sold-out-button-text-color="rgba(255,255,255,1)"
-      data-sold-out-button-background-color="rgba(74,74,74,1)"
-      data-sold-out-button-border-color="rgba(74,74,74,1)"
-      data-sold-out-button-clickable="true"
-      data-display-rsvp="false"
-      data-event-rsvp-position="none"
-      data-event-rsvp-only-show-icon="false"
-      data-event-rsvp-enabled="false"
-      data-follow-section-position="top"
-      data-follow-section-alignment="center"
-      data-follow-section-header-text="Get updates on concerts, new music, and more"
-      data-follow-section-cta-size="small"
-      data-follow-section-cta-text="FOLLOW"
-      data-follow-section-cta-icon="false"
-      data-follow-section-cta-text-color="rgba(255,255,255,1)"
-      data-follow-section-cta-bg-color="rgba(74,74,74,1)"
-      data-follow-section-cta-border-color="rgba(74,74,74,1)"
-      data-follow-section-cta-border-width="0px"
-      data-follow-section-cta-border-radius="2px"
-      data-play-my-city="false"
-      data-display-play-my-city="false"
-      data-play-my-city-position="none"
-      data-play-my-city-enabled="false"
-      data-play-my-city-display="false"
-      data-bit-logo-position="none"
-      data-optin-font=""
-      data-optin-text-color=""
-      data-optin-bg-color=""
-      data-optin-cta-text-color=""
-      data-optin-cta-bg-color=""
-      data-optin-cta-border-width=""
-      data-optin-cta-border-radius=""
-      data-optin-cta-border-color=""
-      data-language="en"
-      data-layout-breakpoint="700"
-      data-app-id=""
-      data-affil-code=""
-      style={{ fontFamily: 'Raleway, sans-serif' }}
-    >
-      <span style={srOnlyStyle}>View tour dates on Bandsintown</span>
-    </a>
+    <div ref={containerRef}>
+      {shouldLoadWidget ? (
+        <a
+          className="bit-widget-initializer"
+          href={`https://www.bandsintown.com/${encodeURIComponent(artistId)}`}
+          data-artist-name={artistId}
+          data-background-color={theme.backgroundColor}
+          data-separator-color={theme.separatorColor}
+          data-text-color={theme.textColor}
+          data-auto-style="true"
+          data-button-label-capitalization="uppercase"
+          data-header-capitalization="uppercase"
+          data-location-capitalization="uppercase"
+          data-venue-capitalization="uppercase"
+          data-display-local-dates="true"
+          data-local-dates-position="tab"
+          data-display-past-dates="true"
+          data-display-details="false"
+          data-display-lineup="false"
+          data-display-start-time="false"
+          data-social-share-icon="true"
+          data-display-limit="all"
+          data-date-format="MMM. D, YYYY"
+          data-date-orientation="horizontal"
+          data-date-border-color="#4A4A4A"
+          data-date-border-width="1px"
+          data-date-capitalization="capitalize"
+          data-date-border-radius="10px"
+          data-event-ticket-cta-size="medium"
+          data-event-custom-ticket-text=""
+          data-event-ticket-text="TICKETS"
+          data-event-ticket-icon="false"
+          data-event-ticket-cta-text-color="rgba(255,255,255,1)"
+          data-event-ticket-cta-bg-color="rgba(74,74,74,1)"
+          data-event-ticket-cta-border-color="rgba(74,74,74,1)"
+          data-event-ticket-cta-border-width="0px"
+          data-event-ticket-cta-border-radius="2px"
+          data-sold-out-button-text-color="rgba(255,255,255,1)"
+          data-sold-out-button-background-color="rgba(74,74,74,1)"
+          data-sold-out-button-border-color="rgba(74,74,74,1)"
+          data-sold-out-button-clickable="true"
+          data-display-rsvp="false"
+          data-event-rsvp-position="none"
+          data-event-rsvp-only-show-icon="false"
+          data-event-rsvp-enabled="false"
+          data-follow-section-position="top"
+          data-follow-section-alignment="center"
+          data-follow-section-header-text="Get updates on concerts, new music, and more"
+          data-follow-section-cta-size="small"
+          data-follow-section-cta-text="FOLLOW"
+          data-follow-section-cta-icon="false"
+          data-follow-section-cta-text-color="rgba(255,255,255,1)"
+          data-follow-section-cta-bg-color="rgba(74,74,74,1)"
+          data-follow-section-cta-border-color="rgba(74,74,74,1)"
+          data-follow-section-cta-border-width="0px"
+          data-follow-section-cta-border-radius="2px"
+          data-play-my-city="false"
+          data-display-play-my-city="false"
+          data-play-my-city-position="none"
+          data-play-my-city-enabled="false"
+          data-play-my-city-display="false"
+          data-bit-logo-position="none"
+          data-optin-font=""
+          data-optin-text-color=""
+          data-optin-bg-color=""
+          data-optin-cta-text-color=""
+          data-optin-cta-bg-color=""
+          data-optin-cta-border-width=""
+          data-optin-cta-border-radius=""
+          data-optin-cta-border-color=""
+          data-language="en"
+          data-layout-breakpoint="700"
+          data-app-id=""
+          data-affil-code=""
+          style={{ fontFamily: 'Raleway, sans-serif' }}
+        >
+          <span style={srOnlyStyle}>View tour dates on Bandsintown</span>
+        </a>
+      ) : (
+        <div className="tour-widget-placeholder" aria-live="polite">
+          Tour dates are loading.
+        </div>
+      )}
+    </div>
   )
 }
 
